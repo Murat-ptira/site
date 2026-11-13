@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chalet Lisa — Ski-in, Ski-out Chalet in Nendaz, 4 Valleys</title>
+<meta name="description" content="Private 3-storey ski-in / ski-out alpine chalet in Les Clèves, Nendaz. Panoramic views across the Rhône Valley and Bernese Alps. Up to 8 guests. Book direct — no platform fees.">
+<meta name="theme-color" content="#F8F7F4">
+<meta property="og:title" content="Chalet Lisa — Nendaz · 4 Valleys">
+<meta property="og:description" content="Ski-in, ski-out sanctuary in the heart of the 4 Valleys. Book direct — no platform fees.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1520984032042-162d526883e0?auto=format&fit=crop&w=1200&q=80">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --alabaster:#F8F7F4;
+  --snow:#FFFFFF;
+  --ink:#141619;
+  --stone:#6E7278;
+  --bronze:#9A7B56;
+  --hair:rgba(20,22,25,.08);
+  --serif:"Cormorant Garamond","Times New Roman",serif;
+  --sans:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --header-h:76px;
+  --pad:clamp(20px,5vw,64px);
+  --section:clamp(88px,12vw,168px);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--header-h);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--alabaster);color:var(--ink);font-family:var(--sans);font-size:16px;font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:0;padding:0;cursor:pointer}
+ul{list-style:none;margin:0;padding:0}
+h1,h2,h3,p{margin:0}
+[hidden]{display:none!important}
+.nw{white-space:nowrap}
+:focus-visible{outline:1px solid var(--bronze);outline-offset:4px}
+.wrap{width:100%;max-width:1320px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:10px 16px;z-index:100;font-size:13px}
+.skip:focus{left:8px}
+
+/* Type */
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--bronze)}
+.display{font-family:var(--serif);font-weight:300;font-size:clamp(2.25rem,5vw,4rem);line-height:1.06;letter-spacing:-.01em}
+.lead{color:var(--stone);font-size:clamp(1rem,1.25vw,1.125rem);max-width:54ch}
+[data-i18n]{transition:opacity .22s ease}
+.lang-swap [data-i18n]{opacity:0}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:46px;padding:0 26px;border-radius:999px;background:var(--ink);color:#fff;font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;border:1px solid var(--ink);transition:background .35s var(--ease),color .35s var(--ease),border-color .35s var(--ease)}
+.btn:hover{background:transparent;color:var(--ink)}
+.btn--ghost{background:transparent;color:var(--ink);border-color:rgba(20,22,25,.22)}
+.btn--ghost:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.link{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding-bottom:6px;border-bottom:1px solid var(--bronze);transition:gap .35s var(--ease),color .35s}
+.link:hover{gap:16px;color:var(--bronze)}
+
+/* Header */
+.header{position:fixed;inset:0 0 auto 0;z-index:50;height:var(--header-h);background:rgba(248,247,244,.66);-webkit-backdrop-filter:blur(16px) saturate(160%);backdrop-filter:blur(16px) saturate(160%);border-bottom:1px solid var(--hair);transition:background .4s ease}
+.header.is-scrolled{background:rgba(248,247,244,.82)}
+.header__in{height:100%;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px}
+.brand{display:inline-flex;flex-direction:column;gap:5px;justify-self:start;line-height:1}
+.brand b{font-family:var(--serif);font-weight:500;font-size:19px;letter-spacing:.3em}
+.brand span{font-size:8.5px;font-weight:500;letter-spacing:.28em;color:var(--stone)}
+.nav{display:flex;gap:clamp(20px,3vw,44px)}
+.nav a{position:relative;font-size:12px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;padding:8px 0;white-space:nowrap}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:1px;background:var(--bronze);transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease)}
+.nav a:hover::after,.nav a.is-current::after{transform:scaleX(1)}
+.header__end{display:flex;align-items:center;gap:22px;justify-self:end}
+.lang{display:flex;align-items:center;gap:2px}
+.lang button{font-size:11px;font-weight:500;letter-spacing:.14em;color:var(--stone);padding:8px 6px;transition:color .3s}
+.lang button + button{position:relative;margin-left:6px}
+.lang button + button::before{content:"";position:absolute;left:-4px;top:50%;width:1px;height:10px;margin-top:-5px;background:rgba(20,22,25,.16)}
+.lang button:hover,.lang button[aria-pressed="true"]{color:var(--ink)}
+.lang button[aria-pressed="true"]{text-decoration:underline;text-decoration-color:var(--bronze);text-underline-offset:6px}
+.header .btn{min-height:40px;padding:0 20px;font-size:11px}
+.burger{display:none;width:40px;height:40px;position:relative}
+.burger i{position:absolute;left:10px;right:10px;height:1px;background:var(--ink);transition:transform .4s var(--ease),top .4s var(--ease)}
+.burger i:first-child{top:16px}.burger i:last-child{top:23px}
+.burger[aria-expanded="true"] i:first-child{top:20px;transform:rotate(45deg)}
+.burger[aria-expanded="true"] i:last-child{top:20px;transform:rotate(-45deg)}
+.drawer{display:none}
+
+/* Hero */
+.hero{position:relative;height:100vh;height:100svh;min-height:540px;color:#fff;overflow:hidden;display:flex;align-items:flex-end;background:#2a2d31}
+.hero__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:38% 50%;animation:heroZoom 2.4s var(--ease) both}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(20,22,25,.9) 0%,rgba(20,22,25,.72) 30%,rgba(20,22,25,.44) 56%,rgba(20,22,25,.1) 80%,rgba(20,22,25,0) 100%)}
+.hero__in{position:relative;z-index:1;padding-bottom:clamp(20px,3.2vw,40px)}
+.hero .eyebrow{color:#E4D3BC}
+.hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(2.2rem,5.6vw,5rem);line-height:1.02;letter-spacing:-.012em;max-width:20ch;margin:18px 0 22px;text-wrap:balance;text-shadow:0 1px 30px rgba(20,22,25,.25)}
+.hero__sub{max-width:56ch;font-size:clamp(.94rem,1.2vw,1.0625rem);color:rgba(255,255,255,.84)}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);margin-top:clamp(28px,5vw,60px);border-top:1px solid rgba(255,255,255,.24)}
+.facts li{padding:18px 20px 0 0;font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.92)}
+.facts li + li{padding-left:20px;border-left:1px solid rgba(255,255,255,.16)}
+.hero__in > *{animation:rise 1.2s var(--ease) both}
+.hero__in > :nth-child(2){animation-delay:.12s}
+.hero__in > :nth-child(3){animation-delay:.24s}
+.hero__in > :nth-child(4){animation-delay:.38s}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes heroZoom{from{transform:scale(1.06)}to{transform:none}}
+
+/* Sections */
+section{padding:var(--section) 0}
+.snow{background:var(--snow);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+.head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px clamp(32px,6vw,96px);align-items:end;margin-bottom:clamp(44px,7vw,88px)}
+.head .display{margin-top:18px}
+.head .lead{justify-self:end}
+
+/* Chalet grid */
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(32px,6vw,96px);border-bottom:1px solid var(--hair)}
+.feat{display:grid;grid-template-columns:44px 1fr;align-content:start;gap:4px 12px;padding:30px 0;border-top:1px solid var(--hair)}
+.feat__n{font-size:11px;font-weight:500;letter-spacing:.16em;color:var(--bronze);padding-top:10px}
+.feat h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.4rem,2vw,1.7rem);line-height:1.2}
+.feat p{grid-column:2;color:var(--stone);font-size:.94rem;max-width:44ch}
+
+/* Tabs */
+.tabs{display:flex;gap:clamp(22px,4vw,52px);border-bottom:1px solid var(--hair);overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{position:relative;padding:18px 0;font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--stone);white-space:nowrap;transition:color .3s}
+.tabs button::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.tabs button[aria-selected="true"]{color:var(--ink)}
+.tabs button[aria-selected="true"]::after{transform:scaleX(1)}
+.floor{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:32px clamp(32px,6vw,96px);padding-top:clamp(40px,6vw,72px)}
+[role="tabpanel"]:not([hidden]){animation:panel .7s var(--ease) both}
+@keyframes panel{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.floor__n{font-family:var(--serif);font-weight:300;font-size:clamp(4.5rem,10vw,8.5rem);line-height:.82;color:var(--bronze);opacity:.55}
+.floor h3{font-family:var(--serif);font-weight:300;font-size:clamp(1.8rem,3.2vw,2.75rem);line-height:1.1;margin:22px 0 14px}
+.floor p{color:var(--stone);max-width:42ch}
+.rooms li{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:20px 0;border-top:1px solid var(--hair);font-family:var(--serif);font-size:clamp(1.2rem,1.9vw,1.5rem);line-height:1.3}
+.rooms li:last-child{border-bottom:1px solid var(--hair)}
+.rooms small{flex:none;font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.16em;color:var(--bronze)}
+
+/* Seasons */
+.season-head{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;flex-wrap:wrap;margin-bottom:clamp(40px,6vw,72px)}
+.season-head .display{margin-top:18px}
+.pill{position:relative;display:inline-grid;grid-template-columns:1fr 1fr;padding:4px;border:1px solid var(--hair);border-radius:999px;background:var(--alabaster)}
+.pill::before{content:"";position:absolute;top:4px;bottom:4px;left:4px;width:calc(50% - 4px);border-radius:999px;background:var(--ink);transition:transform .55s var(--ease)}
+.pill[data-active="summer"]::before{transform:translateX(100%)}
+.pill button{position:relative;min-width:116px;padding:11px 22px;font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--stone);transition:color .4s}
+.pill button[aria-selected="true"]{color:#fff}
+.season{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:32px clamp(32px,6vw,96px);align-items:center}
+.season__media{position:relative;aspect-ratio:5/4;overflow:hidden;background:#e9e7e2}
+.season__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.04);transition:opacity 1s var(--ease),transform 1.6s var(--ease)}
+.season__media img.is-on{opacity:1;transform:none}
+.season__big{font-family:var(--serif);font-weight:300;font-size:clamp(4rem,9vw,7.5rem);line-height:.9;letter-spacing:-.02em}
+.season__big sup{font-size:.32em;letter-spacing:.04em;color:var(--bronze);vertical-align:top;position:relative;top:.5em;margin-left:.3em}
+.season__cap{margin:14px 0 30px;color:var(--stone);max-width:36ch}
+.ticks li{padding:15px 0;border-top:1px solid var(--hair);font-size:.95rem;display:flex;gap:16px}
+.ticks li:last-child{border-bottom:1px solid var(--hair)}
+.ticks li::before{content:"";flex:none;width:14px;height:1px;background:var(--bronze);margin-top:.85em}
+
+/* Location */
+.loc{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px clamp(32px,6vw,96px)}
+.loc .display{margin:18px 0 26px}
+.loc .lead{margin-bottom:34px}
+.dl{margin:0;border-bottom:1px solid var(--hair);align-self:end}
+.dl div{display:grid;grid-template-columns:minmax(96px,1fr) 2.4fr;gap:16px;padding:22px 0;border-top:1px solid var(--hair);align-items:baseline}
+.dl dt{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--stone)}
+.dl dd{margin:0;font-family:var(--serif);font-size:clamp(1.2rem,1.9vw,1.5rem);line-height:1.3}
+
+/* Inquiry */
+.card{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);background:var(--alabaster);border:1px solid var(--hair)}
+.card__a{padding:clamp(28px,5vw,64px);border-right:1px solid var(--hair);display:flex;flex-direction:column}
+.card__a .display{font-size:clamp(2rem,3.8vw,3.25rem);margin:18px 0 20px}
+.card__a .display em{font-style:italic;color:var(--bronze)}
+.seasons-tag{display:inline-block;margin-top:26px;padding:8px 16px;border:1px solid rgba(154,123,86,.4);border-radius:999px;font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--bronze);align-self:flex-start}
+.contact{margin-top:auto;padding-top:40px}
+.contact a{display:block;padding:18px 0;border-top:1px solid var(--hair);transition:color .3s}
+.contact a:last-child{border-bottom:1px solid var(--hair)}
+.contact a:hover{color:var(--bronze)}
+.contact small{display:block;font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--stone);margin-bottom:4px}
+.contact span{font-family:var(--serif);font-size:clamp(1.15rem,1.8vw,1.45rem);word-break:break-word}
+.form{padding:clamp(28px,5vw,64px);background:var(--snow);display:grid;grid-template-columns:1fr 1fr;gap:26px 28px;align-content:start}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field--full{grid-column:1/-1}
+.field label,.preview small{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--stone)}
+.field input,.field select,.field textarea{width:100%;min-width:0;height:46px;padding:0;background:transparent;border:0;border-bottom:1px solid rgba(20,22,25,.18);border-radius:0;font-size:16px;font-weight:300;outline:none;transition:border-color .3s;-webkit-appearance:none;appearance:none}
+.field textarea{height:auto;min-height:46px;padding:11px 0;resize:vertical;line-height:1.5}
+.field select{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%236E7278'/%3E%3C/svg%3E") no-repeat right 2px center}
+.field input:focus,.field select:focus,.field textarea:focus{border-bottom-color:var(--bronze)}
+.field ::placeholder{color:#a9acb0}
+.preview{grid-column:1/-1;border:1px solid var(--hair);background:var(--alabaster);padding:20px 22px}
+.preview pre{margin:10px 0 0;font-family:var(--sans);font-size:.875rem;line-height:1.75;white-space:pre-wrap;word-break:break-word;color:var(--ink)}
+.actions{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:12px}
+.actions .btn{flex:1 1 200px}
+.error{grid-column:1/-1;min-height:1.4em;margin-top:-10px;font-size:.84rem;color:#9a4b3c}
+
+/* Footer */
+.footer{padding:44px 0 calc(44px + env(safe-area-inset-bottom));font-size:12px;color:var(--stone);letter-spacing:.04em}
+.footer__in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 32px;align-items:baseline}
+.footer b{font-family:var(--serif);font-weight:500;font-size:15px;letter-spacing:.26em;color:var(--ink);margin-right:14px}
+.footer .credit{font-size:11px;opacity:.75}
+
+/* Scroll reveal (only when JS is running) */
+.js .reveal{opacity:0;transform:translateY(26px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease);transition-delay:var(--d,0s)}
+.js .reveal.is-in{opacity:1;transform:none}
+
+@media (max-width:1080px){
+  .nav,.header .btn{display:none}
+  .header__in{grid-template-columns:1fr auto}
+  .header__end{gap:10px}
+  .burger{display:block}
+  .drawer{display:block;position:fixed;inset:var(--header-h) 0 auto 0;z-index:49;padding:10px var(--pad) 30px;background:rgba(248,247,244,.9);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom:1px solid var(--hair);opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .4s var(--ease),transform .4s var(--ease),visibility .4s}
+  .drawer.is-open{opacity:1;visibility:visible;transform:none}
+  .drawer a:not(.btn){display:block;padding:17px 0;border-bottom:1px solid var(--hair);font-family:var(--serif);font-size:1.6rem;font-weight:300}
+  .drawer .btn{margin-top:26px;width:100%}
+}
+@media (max-width:860px){
+  :root{--header-h:64px}
+  .brand b{font-size:16px;letter-spacing:.26em}
+  .brand span{font-size:7.5px}
+  .head,.floor,.season,.loc,.card,.grid{grid-template-columns:minmax(0,1fr)}
+  .head .lead{justify-self:start}
+  .card__a{border-right:0;border-bottom:1px solid var(--hair)}
+  .facts{grid-template-columns:1fr 1fr}
+  .facts li{padding:13px 12px 13px 0;font-size:10px;letter-spacing:.16em}
+  .facts li + li{padding-left:0;border-left:0}
+  .facts li:nth-child(even){padding-left:16px;border-left:1px solid rgba(255,255,255,.16)}
+  .facts li:nth-child(n+3){border-top:1px solid rgba(255,255,255,.16)}
+  .hero__in{padding-bottom:calc(10px + env(safe-area-inset-bottom))}
+  .hero h1{margin:14px 0 16px}
+  .pill{width:100%}
+  .pill button{min-width:0}
+  .season__media{aspect-ratio:4/3}
+}
+@media (max-width:480px){
+  .form{grid-template-columns:1fr 1fr;gap:22px 18px}
+  .dl div{grid-template-columns:1fr;gap:4px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="header" id="header">
+  <div class="wrap header__in">
+    <a class="brand" href="#top" aria-label="Chalet Lisa — Nendaz, 4 Valleys">
+      <b>CHALET LISA</b>
+      <span>NENDAZ · 4 VALLEYS</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#chalet" data-i18n="nav.chalet">The Chalet</a>
+      <a href="#spaces" data-i18n="nav.spaces">Living Spaces</a>
+      <a href="#seasons" data-i18n="nav.seasons">Seasons</a>
+      <a href="#location" data-i18n="nav.location">Location</a>
+    </nav>
+    <div class="header__end">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+        <button type="button" data-lang="de" aria-pressed="false">DE</button>
+      </div>
+      <a class="btn" href="#inquire" data-i18n="cta">Inquire Direct</a>
+      <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="drawer"><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+<div class="drawer" id="drawer">
+  <a href="#chalet" data-i18n="nav.chalet">The Chalet</a>
+  <a href="#spaces" data-i18n="nav.spaces">Living Spaces</a>
+  <a href="#seasons" data-i18n="nav.seasons">Seasons</a>
+  <a href="#location" data-i18n="nav.location">Location</a>
+  <a class="btn" href="#inquire" data-i18n="cta">Inquire Direct</a>
+</div>
+
+<main id="main">
+  <!-- Hero -->
+  <div class="hero" id="top">
+    <img class="hero__img" alt="Timber alpine chalet in fresh snow"
+      src="https://images.unsplash.com/photo-1520984032042-162d526883e0?auto=format&fit=crop&w=2000&q=80"
+      srcset="https://images.unsplash.com/photo-1520984032042-162d526883e0?auto=format&fit=crop&w=900&q=75 900w,
+              https://images.unsplash.com/photo-1520984032042-162d526883e0?auto=format&fit=crop&w=1600&q=80 1600w,
+              https://images.unsplash.com/photo-1520984032042-162d526883e0?auto=format&fit=crop&w=2600&q=80 2600w"
+      sizes="100vw" fetchpriority="high" decoding="async">
+    <div class="wrap hero__in">
+      <p class="eyebrow" data-i18n="hero.eyebrow">Les Clèves · Nendaz · Valais</p>
+      <h1 data-i18n="hero.title" data-i18n-html><span class="nw">Ski-in,</span> <span class="nw">Ski-out</span> Sanctuary in the Heart of the 4 Valleys.</h1>
+      <p class="hero__sub" data-i18n="hero.sub">Private 3-storey alpine chalet in Les Clèves, Nendaz. Panoramic views across the Rhône Valley and Bernese Alps — up to 8 guests.</p>
+      <ul class="facts">
+        <li data-i18n="fact.1">8 Guests</li>
+        <li data-i18n="fact.2">3 Bedrooms &amp; 3 Baths</li>
+        <li data-i18n="fact.3">Direct Piste Access</li>
+        <li data-i18n="fact.4">EV Charger &amp; Garage</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- The Chalet -->
+  <section id="chalet">
+    <div class="wrap">
+      <div class="head reveal">
+        <div>
+          <p class="eyebrow" data-i18n="chalet.eyebrow">The Chalet</p>
+          <h2 class="display" data-i18n="chalet.title">A quiet house on the piste.</h2>
+        </div>
+        <p class="lead" data-i18n="chalet.lead">Three storeys of timber, warmth and light in Les Clèves — beside the Nendaz téléphérique, with the Rhône Valley and the Bernese Alps laid out below.</p>
+      </div>
+      <div class="grid">
+        <article class="feat reveal"><span class="feat__n">01</span><h3 data-i18n="f1.t">True Ski-in / Ski-out</h3><p data-i18n="f1.d">On the piste, next to the Nendaz téléphérique. Skis on at the door.</p></article>
+        <article class="feat reveal"><span class="feat__n">02</span><h3 data-i18n="f2.t">Log-Burning Fireplace</h3><p data-i18n="f2.d">A real log fire at the centre of the open-plan living room.</p></article>
+        <article class="feat reveal"><span class="feat__n">03</span><h3 data-i18n="f3.t">Underfloor Heating</h3><p data-i18n="f3.d">Quiet, even warmth underfoot after a day on the mountain.</p></article>
+        <article class="feat reveal"><span class="feat__n">04</span><h3 data-i18n="f4.t">East &amp; West Sun Terraces</h3><p data-i18n="f4.d">A wraparound deck that follows the sun from morning to evening.</p></article>
+        <article class="feat reveal"><span class="feat__n">05</span><h3 data-i18n="f5.t">Garden &amp; BBQ</h3><p data-i18n="f5.d">A landscaped garden with barbecue for long alpine evenings.</p></article>
+        <article class="feat reveal"><span class="feat__n">06</span><h3 data-i18n="f6.t">Ski Boot Room</h3><p data-i18n="f6.d">A dedicated, heated boot room for boots, skis and gear.</p></article>
+        <article class="feat reveal"><span class="feat__n">07</span><h3 data-i18n="f7.t">Garage &amp; EV Charger</h3><p data-i18n="f7.d">Private garage with EV car charger, plus a second parking space.</p></article>
+        <article class="feat reveal"><span class="feat__n">08</span><h3 data-i18n="f8.t">The Alpine Table</h3><p data-i18n="f8.d">Raclette and fondue sets for the evening, Nespresso for the morning.</p></article>
+        <article class="feat reveal"><span class="feat__n">09</span><h3 data-i18n="f9.t">Family-Ready</h3><p data-i18n="f9.d">Stair gates, cot and highchair are all provided.</p></article>
+        <article class="feat reveal"><span class="feat__n">10</span><h3 data-i18n="f10.t">Managed On-Site</h3><p data-i18n="f10.d">Looked after locally by Altiservices throughout your stay.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Living Spaces -->
+  <section id="spaces" class="snow">
+    <div class="wrap">
+      <div class="head reveal">
+        <div>
+          <p class="eyebrow" data-i18n="spaces.eyebrow">Living Spaces</p>
+          <h2 class="display" data-i18n="spaces.title">Three storeys, one calm rhythm.</h2>
+        </div>
+        <p class="lead" data-i18n="spaces.lead">Living on the main floor, rest below, and a quiet mezzanine above — three bedrooms and three bathrooms for up to eight guests.</p>
+      </div>
+      <div class="reveal">
+        <div class="tabs" role="tablist" aria-label="Floors" data-tabs>
+          <button type="button" role="tab" id="tab-main" aria-controls="panel-main" aria-selected="true" data-i18n="tab.main">Main Floor</button>
+          <button type="button" role="tab" id="tab-lower" aria-controls="panel-lower" aria-selected="false" tabindex="-1" data-i18n="tab.lower">Lower Floor</button>
+          <button type="button" role="tab" id="tab-mezz" aria-controls="panel-mezz" aria-selected="false" tabindex="-1" data-i18n="tab.mezz">Mezzanine</button>
+        </div>
+        <div class="floor" role="tabpanel" id="panel-main" aria-labelledby="tab-main">
+          <div>
+            <div class="floor__n" aria-hidden="true">01</div>
+            <h3 data-i18n="main.h">Gather around the fire.</h3>
+            <p data-i18n="main.p">An open-plan living floor with log fire, kitchen and dining, opening onto the wraparound deck and barbecue garden.</p>
+          </div>
+          <ul class="rooms">
+            <li><span data-i18n="main.1">Open-plan living room with log fire</span><small>01</small></li>
+            <li><span data-i18n="main.2">Kitchen</span><small>02</small></li>
+            <li><span data-i18n="main.3">Dining</span><small>03</small></li>
+            <li><span data-i18n="main.4">Bathroom</span><small>04</small></li>
+            <li><span data-i18n="main.5">Wraparound deck &amp; BBQ garden</span><small>05</small></li>
+          </ul>
+        </div>
+        <div class="floor" role="tabpanel" id="panel-lower" aria-labelledby="tab-lower" hidden>
+          <div>
+            <div class="floor__n" aria-hidden="true">02</div>
+            <h3 data-i18n="lower.h">Rest, then return to the slopes.</h3>
+            <p data-i18n="lower.p">Two bedrooms, each with its own bathroom, and a heated boot room for the morning.</p>
+          </div>
+          <ul class="rooms">
+            <li><span data-i18n="lower.1">Master double bedroom with ensuite</span><small>01</small></li>
+            <li><span data-i18n="lower.2">Bunk room with 4 adult-sized bunks</span><small>02</small></li>
+            <li><span data-i18n="lower.3">Private bathroom for the bunk room</span><small>03</small></li>
+            <li><span data-i18n="lower.4">Heated boot room</span><small>04</small></li>
+          </ul>
+        </div>
+        <div class="floor" role="tabpanel" id="panel-mezz" aria-labelledby="tab-mezz" hidden>
+          <div>
+            <div class="floor__n" aria-hidden="true">03</div>
+            <h3 data-i18n="mezz.h">A room above it all.</h3>
+            <p data-i18n="mezz.p">The top-floor double bedroom, with a desk nook overlooking the living space below.</p>
+          </div>
+          <ul class="rooms">
+            <li><span data-i18n="mezz.1">Top-floor double bedroom</span><small>01</small></li>
+            <li><span data-i18n="mezz.2">Desk nook</span><small>02</small></li>
+            <li><span data-i18n="mezz.3">Overlooking the living space</span><small>03</small></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seasons -->
+  <section id="seasons">
+    <div class="wrap">
+      <div class="season-head reveal">
+        <div>
+          <p class="eyebrow" data-i18n="seasons.eyebrow">Seasons</p>
+          <h2 class="display" data-i18n="seasons.title">One chalet, two mountains.</h2>
+        </div>
+        <div class="pill" role="tablist" aria-label="Season" data-tabs data-active="winter" id="seasonPill">
+          <button type="button" role="tab" id="tab-winter" aria-controls="panel-winter" aria-selected="true" data-season="winter" data-i18n="season.winter">Winter</button>
+          <button type="button" role="tab" id="tab-summer" aria-controls="panel-summer" aria-selected="false" tabindex="-1" data-season="summer" data-i18n="season.summer">Summer</button>
+        </div>
+      </div>
+      <div class="season reveal">
+        <div class="season__media">
+          <img class="is-on" data-season-img="winter" loading="lazy" decoding="async" alt="Skiers on a wide alpine piste"
+            src="https://images.unsplash.com/photo-1605540436563-5bca919ae766?auto=format&fit=crop&w=1400&q=80">
+          <img data-season-img="summer" loading="lazy" decoding="async" alt="Green alpine valley in summer"
+            src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1400&q=80">
+        </div>
+        <div>
+          <div role="tabpanel" id="panel-winter" aria-labelledby="tab-winter">
+            <div class="season__big">410+<sup>KM</sup></div>
+            <p class="season__cap" data-i18n="winter.cap">Direct access to more than 410 km of slopes across Nendaz &amp; Verbier.</p>
+            <ul class="ticks">
+              <li data-i18n="winter.1">Zero shuttle buses — ski from the door</li>
+              <li data-i18n="winter.2">Next to the Nendaz téléphérique</li>
+              <li data-i18n="winter.3">The full 4 Valleys ski area</li>
+              <li data-i18n="winter.4">Heated boot room, log fire on return</li>
+            </ul>
+          </div>
+          <div role="tabpanel" id="panel-summer" aria-labelledby="tab-summer" hidden>
+            <div class="season__big" data-i18n="summer.big">Bisses</div>
+            <p class="season__cap" data-i18n="summer.cap">Walks along the historic bisses trails, and long light on the terraces.</p>
+            <ul class="ticks">
+              <li data-i18n="summer.1">Historic bisses trail walks</li>
+              <li data-i18n="summer.2">Mountain biking</li>
+              <li data-i18n="summer.3">Day trips to Chamonix</li>
+              <li data-i18n="summer.4">Day trips to the Italian lakes</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location -->
+  <section id="location" class="snow">
+    <div class="wrap loc">
+      <div class="reveal">
+        <p class="eyebrow" data-i18n="loc.eyebrow">Location</p>
+        <h2 class="display" data-i18n="loc.title">Les Clèves, above the Rhône Valley.</h2>
+        <p class="lead" data-i18n="loc.lead">Chalet Lisa sits in Les Clèves, Nendaz, in the heart of the 4 Valleys — with panoramic views across the Rhône Valley to the Bernese Alps.</p>
+        <a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=Les+Cl%C3%A8ves%2C+Nendaz%2C+Valais%2C+Switzerland" target="_blank" rel="noopener"><span data-i18n="loc.map">Open in Maps</span><span aria-hidden="true">→</span></a>
+      </div>
+      <dl class="dl reveal">
+        <div><dt data-i18n="loc.k1">Address</dt><dd data-i18n="loc.v1">Les Clèves, Nendaz, Valais, Switzerland</dd></div>
+        <div><dt data-i18n="loc.k2">Ski Area</dt><dd data-i18n="loc.v2">4 Valleys · Nendaz &amp; Verbier</dd></div>
+        <div><dt data-i18n="loc.k3">Lift</dt><dd data-i18n="loc.v3">Next to the Nendaz téléphérique</dd></div>
+        <div><dt data-i18n="loc.k4">Outlook</dt><dd data-i18n="loc.v4">Rhône Valley &amp; Bernese Alps</dd></div>
+        <div><dt data-i18n="loc.k5">Day Trips</dt><dd data-i18n="loc.v5">Chamonix &amp; the Italian lakes</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- Inquiry -->
+  <section id="inquire">
+    <div class="wrap">
+      <div class="card reveal">
+        <div class="card__a">
+          <p class="eyebrow" data-i18n="inq.eyebrow">Direct Booking · Zero Commission</p>
+          <h2 class="display"><span data-i18n="inq.title1">Book Direct —</span> <em data-i18n="inq.title2">No Platform Fees</em></h2>
+          <p class="lead" data-i18n="inq.lead">Inquire with the owner directly. No booking platform in between, no commission added — just a personal reply.</p>
+          <span class="seasons-tag" data-i18n="inq.tag">2026 / 2027 Seasons</span>
+          <div class="contact">
+            <a href="mailto:chaletlisanendaz@gmail.com"><small data-i18n="inq.email">Email</small><span>chaletlisanendaz@gmail.com</span></a>
+            <a href="tel:+447700154644"><small data-i18n="inq.phone">Phone</small><span>+44 7700 154644</span></a>
+            <a href="https://wa.me/447700154644" target="_blank" rel="noopener"><small>WhatsApp</small><span>+44 7700 154644</span></a>
+          </div>
+        </div>
+        <form class="form" id="form" novalidate>
+          <div class="field"><label for="in" data-i18n="form.in">Arrival</label><input type="date" id="in" name="in" required></div>
+          <div class="field"><label for="out" data-i18n="form.out">Departure</label><input type="date" id="out" name="out" required></div>
+          <div class="field"><label for="adults" data-i18n="form.adults">Adults</label>
+            <select id="adults" name="adults"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select></div>
+          <div class="field"><label for="kids" data-i18n="form.kids">Children</label>
+            <select id="kids" name="kids"><option selected>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></div>
+          <div class="field field--full"><label for="name" data-i18n="form.name">Your Name</label><input type="text" id="name" name="name" autocomplete="name"></div>
+          <div class="field field--full"><label for="notes" data-i18n="form.notes">Notes (optional)</label><textarea id="notes" name="notes" rows="1" data-i18n-ph="form.notes.ph" placeholder="Anything we should know?"></textarea></div>
+          <div class="preview" aria-live="polite"><small data-i18n="form.preview">Your message</small><pre id="preview"></pre></div>
+          <p class="error" id="error" role="alert"></p>
+          <div class="actions">
+            <button class="btn" type="button" id="sendMail" data-i18n="form.mail">Send by Email</button>
+            <button class="btn btn--ghost" type="button" id="sendWa" data-i18n="form.wa">Send via WhatsApp</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__in">
+    <p><b>CHALET LISA</b><span data-i18n="foot.addr">Les Clèves, Nendaz, Valais, Switzerland</span></p>
+    <p>© 2026 Chalet Lisa</p>
+    <p class="credit" data-i18n="foot.credit">Crafted by Jacob Web Design</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var doc = document, root = doc.documentElement;
+  root.classList.add('js');
+  var $ = function(s, c){ return (c || doc).querySelector(s); };
+  var $$ = function(s, c){ return Array.prototype.slice.call((c || doc).querySelectorAll(s)); };
+
+  var EMAIL = 'chaletlisanendaz@gmail.com', WHATSAPP = '447700154644';
+
+  /* ---------- Translations ---------- */
+  var I18N = {
+    en: {
+      'nav.chalet':'The Chalet','nav.spaces':'Living Spaces','nav.seasons':'Seasons','nav.location':'Location','cta':'Inquire Direct',
+      'hero.eyebrow':'Les Clèves · Nendaz · Valais',
+      'hero.title':'<span class="nw">Ski-in,</span> <span class="nw">Ski-out</span> Sanctuary in the Heart of the 4 Valleys.',
+      'hero.sub':'Private 3-storey alpine chalet in Les Clèves, Nendaz. Panoramic views across the Rhône Valley and Bernese Alps — up to 8 guests.',
+      'fact.1':'8 Guests','fact.2':'3 Bedrooms & 3 Baths','fact.3':'Direct Piste Access','fact.4':'EV Charger & Garage',
+      'chalet.eyebrow':'The Chalet','chalet.title':'A quiet house on the piste.',
+      'chalet.lead':'Three storeys of timber, warmth and light in Les Clèves — beside the Nendaz téléphérique, with the Rhône Valley and the Bernese Alps laid out below.',
+      'f1.t':'True Ski-in / Ski-out','f1.d':'On the piste, next to the Nendaz téléphérique. Skis on at the door.',
+      'f2.t':'Log-Burning Fireplace','f2.d':'A real log fire at the centre of the open-plan living room.',
+      'f3.t':'Underfloor Heating','f3.d':'Quiet, even warmth underfoot after a day on the mountain.',
+      'f4.t':'East & West Sun Terraces','f4.d':'A wraparound deck that follows the sun from morning to evening.',
+      'f5.t':'Garden & BBQ','f5.d':'A landscaped garden with barbecue for long alpine evenings.',
+      'f6.t':'Ski Boot Room','f6.d':'A dedicated, heated boot room for boots, skis and gear.',
+      'f7.t':'Garage & EV Charger','f7.d':'Private garage with EV car charger, plus a second parking space.',
+      'f8.t':'The Alpine Table','f8.d':'Raclette and fondue sets for the evening, Nespresso for the morning.',
+      'f9.t':'Family-Ready','f9.d':'Stair gates, cot and highchair are all provided.',
+      'f10.t':'Managed On-Site','f10.d':'Looked after locally by Altiservices throughout your stay.',
+      'spaces.eyebrow':'Living Spaces','spaces.title':'Three storeys, one calm rhythm.',
+      'spaces.lead':'Living on the main floor, rest below, and a quiet mezzanine above — three bedrooms and three bathrooms for up to eight guests.',
+      'tab.main':'Main Floor','tab.lower':'Lower Floor','tab.mezz':'Mezzanine',
+      'main.h':'Gather around the fire.','main.p':'An open-plan living floor with log fire, kitchen and dining, opening onto the wraparound deck and barbecue garden.',
+      'main.1':'Open-plan living room with log fire','main.2':'Kitchen','main.3':'Dining','main.4':'Bathroom','main.5':'Wraparound deck & BBQ garden',
+      'lower.h':'Rest, then return to the slopes.','lower.p':'Two bedrooms, each with its own bathroom, and a heated boot room for the morning.',
+      'lower.1':'Master double bedroom with ensuite','lower.2':'Bunk room with 4 adult-sized bunks','lower.3':'Private bathroom for the bunk room','lower.4':'Heated boot room',
+      'mezz.h':'A room above it all.','mezz.p':'The top-floor double bedroom, with a desk nook overlooking the living space below.',
+      'mezz.1':'Top-floor double bedroom','mezz.2':'Desk nook','mezz.3':'Overlooking the living space',
+      'seasons.eyebrow':'Seasons','seasons.title':'One chalet, two mountains.','season.winter':'Winter','season.summer':'Summer',
+      'winter.cap':'Direct access to more than 410 km of slopes across Nendaz & Verbier.',
+      'winter.1':'Zero shuttle buses — ski from the door','winter.2':'Next to the Nendaz téléphérique','winter.3':'The full 4 Valleys ski area','winter.4':'Heated boot room, log fire on return',
+      'summer.big':'Bisses','summer.cap':'Walks along the historic bisses trails, and long light on the terraces.',
+      'summer.1':'Historic bisses trail walks','summer.2':'Mountain biking','summer.3':'Day trips to Chamonix','summer.4':'Day trips to the Italian lakes',
+      'loc.eyebrow':'Location','loc.title':'Les Clèves, above the Rhône Valley.',
+      'loc.lead':'Chalet Lisa sits in Les Clèves, Nendaz, in the heart of the 4 Valleys — with panoramic views across the Rhône Valley to the Bernese Alps.',
+      'loc.map':'Open in Maps',
+      'loc.k1':'Address','loc.v1':'Les Clèves, Nendaz, Valais, Switzerland','loc.k2':'Ski Area','loc.v2':'4 Valleys · Nendaz & Verbier',
+      'loc.k3':'Lift','loc.v3':'Next to the Nendaz téléphérique','loc.k4':'Outlook','loc.v4':'Rhône Valley & Bernese Alps','loc.k5':'Day Trips','loc.v5':'Chamonix & the Italian lakes',
+      'inq.eyebrow':'Direct Booking · Zero Commission','inq.title1':'Book Direct —','inq.title2':'No Platform Fees',
+      'inq.lead':'Inquire with the owner directly. No booking platform in between, no commission added — just a personal reply.',
+      'inq.tag':'2026 / 2027 Seasons','inq.email':'Email','inq.phone':'Phone',
+      'form.in':'Arrival','form.out':'Departure','form.adults':'Adults','form.kids':'Children','form.name':'Your Name','form.notes':'Notes (optional)',
+      'form.notes.ph':'Anything we should know?','form.preview':'Your message','form.mail':'Send by Email','form.wa':'Send via WhatsApp',
+      'foot.addr':'Les Clèves, Nendaz, Valais, Switzerland','foot.credit':'Crafted by Jacob Web Design',
+      'msg.hello':'Hello, I would like to inquire about a direct booking at Chalet Lisa.',
+      'msg.in':'Arrival','msg.out':'Departure','msg.nights':'Nights','msg.guests':'Guests','msg.name':'Name','msg.notes':'Notes',
+      'msg.adult':'adult','msg.adults':'adults','msg.child':'child','msg.children':'children','msg.subject':'Chalet Lisa — Direct inquiry','msg.thanks':'Thank you.',
+      'err.dates':'Please choose your arrival and departure dates.','err.order':'Departure must be after arrival.','err.guests':'Chalet Lisa sleeps up to 8 guests.'
+    },
+    fr: {
+      'nav.chalet':'Le Chalet','nav.spaces':'Espaces de vie','nav.seasons':'Saisons','nav.location':'Situation','cta':'Demande directe',
+      'hero.eyebrow':'Les Clèves · Nendaz · Valais',
+      'hero.title':'Un sanctuaire skis aux pieds, au cœur des 4 Vallées.',
+      'hero.sub':'Chalet alpin privé sur 3 niveaux aux Clèves, Nendaz. Vues panoramiques sur la vallée du Rhône et les Alpes bernoises — jusqu’à 8 hôtes.',
+      'fact.1':'8 hôtes','fact.2':'3 chambres & 3 salles de bain','fact.3':'Accès direct aux pistes','fact.4':'Borne électrique & garage',
+      'chalet.eyebrow':'Le Chalet','chalet.title':'Une maison paisible sur la piste.',
+      'chalet.lead':'Trois niveaux de bois, de chaleur et de lumière aux Clèves — à côté du téléphérique de Nendaz, face à la vallée du Rhône et aux Alpes bernoises.',
+      'f1.t':'Véritable ski-in / ski-out','f1.d':'Sur la piste, à côté du téléphérique de Nendaz. On chausse devant la porte.',
+      'f2.t':'Cheminée à bois','f2.d':'Un vrai feu de bois au centre du séjour ouvert.',
+      'f3.t':'Chauffage au sol','f3.d':'Une chaleur douce et silencieuse après une journée en montagne.',
+      'f4.t':'Terrasses est & ouest','f4.d':'Une terrasse panoramique qui suit le soleil du matin au soir.',
+      'f5.t':'Jardin & barbecue','f5.d':'Un jardin paysager avec barbecue pour les longues soirées alpines.',
+      'f6.t':'Local à skis','f6.d':'Un local dédié et chauffé pour chaussures, skis et équipement.',
+      'f7.t':'Garage & borne électrique','f7.d':'Garage privé avec borne de recharge, plus une seconde place de parc.',
+      'f8.t':'La table alpine','f8.d':'Sets à raclette et à fondue pour le soir, Nespresso pour le matin.',
+      'f9.t':'Pensé pour les familles','f9.d':'Barrières d’escalier, lit bébé et chaise haute à disposition.',
+      'f10.t':'Gestion sur place','f10.d':'Un suivi local assuré par Altiservices tout au long du séjour.',
+      'spaces.eyebrow':'Espaces de vie','spaces.title':'Trois niveaux, un même calme.',
+      'spaces.lead':'La vie à l’étage principal, le repos en dessous, une mezzanine paisible au-dessus — trois chambres et trois salles de bain pour huit hôtes.',
+      'tab.main':'Étage principal','tab.lower':'Étage inférieur','tab.mezz':'Mezzanine',
+      'main.h':'Se retrouver autour du feu.','main.p':'Un étage de vie ouvert avec feu de bois, cuisine et salle à manger, prolongé par la terrasse panoramique et le jardin barbecue.',
+      'main.1':'Séjour ouvert avec feu de bois','main.2':'Cuisine','main.3':'Salle à manger','main.4':'Salle de bain','main.5':'Terrasse panoramique & jardin barbecue',
+      'lower.h':'Se reposer, puis repartir sur les pistes.','lower.p':'Deux chambres, chacune avec sa salle de bain, et un local à skis chauffé pour le matin.',
+      'lower.1':'Chambre double principale avec salle de bain attenante','lower.2':'Dortoir avec 4 lits superposés taille adulte','lower.3':'Salle de bain privée pour le dortoir','lower.4':'Local à skis chauffé',
+      'mezz.h':'Une chambre au-dessus de tout.','mezz.p':'La chambre double du dernier étage, avec un coin bureau surplombant l’espace de vie.',
+      'mezz.1':'Chambre double au dernier étage','mezz.2':'Coin bureau','mezz.3':'Vue sur l’espace de vie',
+      'seasons.eyebrow':'Saisons','seasons.title':'Un chalet, deux montagnes.','season.winter':'Hiver','season.summer':'Été',
+      'winter.cap':'Accès direct à plus de 410 km de pistes entre Nendaz et Verbier.',
+      'winter.1':'Aucune navette — skis aux pieds dès la porte','winter.2':'À côté du téléphérique de Nendaz','winter.3':'L’ensemble du domaine des 4 Vallées','winter.4':'Local à skis chauffé, feu de bois au retour',
+      'summer.big':'Bisses','summer.cap':'Balades le long des bisses historiques, et longue lumière sur les terrasses.',
+      'summer.1':'Balades sur les sentiers des bisses historiques','summer.2':'VTT','summer.3':'Excursions à Chamonix','summer.4':'Excursions aux lacs italiens',
+      'loc.eyebrow':'Situation','loc.title':'Les Clèves, au-dessus de la vallée du Rhône.',
+      'loc.lead':'Le Chalet Lisa se trouve aux Clèves, à Nendaz, au cœur des 4 Vallées — avec des vues panoramiques sur la vallée du Rhône et les Alpes bernoises.',
+      'loc.map':'Ouvrir dans Maps',
+      'loc.k1':'Adresse','loc.v1':'Les Clèves, Nendaz, Valais, Suisse','loc.k2':'Domaine','loc.v2':'4 Vallées · Nendaz & Verbier',
+      'loc.k3':'Remontée','loc.v3':'À côté du téléphérique de Nendaz','loc.k4':'Vue','loc.v4':'Vallée du Rhône & Alpes bernoises','loc.k5':'Excursions','loc.v5':'Chamonix & les lacs italiens',
+      'inq.eyebrow':'Réservation directe · Zéro commission','inq.title1':'Réservez en direct —','inq.title2':'sans frais de plateforme',
+      'inq.lead':'Contactez directement le propriétaire. Aucune plateforme intermédiaire, aucune commission — simplement une réponse personnelle.',
+      'inq.tag':'Saisons 2026 / 2027','inq.email':'E-mail','inq.phone':'Téléphone',
+      'form.in':'Arrivée','form.out':'Départ','form.adults':'Adultes','form.kids':'Enfants','form.name':'Votre nom','form.notes':'Remarques (facultatif)',
+      'form.notes.ph':'Une précision à nous donner ?','form.preview':'Votre message','form.mail':'Envoyer par e-mail','form.wa':'Envoyer via WhatsApp',
+      'foot.addr':'Les Clèves, Nendaz, Valais, Suisse','foot.credit':'Réalisé par Jacob Web Design',
+      'msg.hello':'Bonjour, je souhaite faire une demande de réservation directe pour le Chalet Lisa.',
+      'msg.in':'Arrivée','msg.out':'Départ','msg.nights':'Nuits','msg.guests':'Hôtes','msg.name':'Nom','msg.notes':'Remarques',
+      'msg.adult':'adulte','msg.adults':'adultes','msg.child':'enfant','msg.children':'enfants','msg.subject':'Chalet Lisa — Demande directe','msg.thanks':'Merci.',
+      'err.dates':'Veuillez choisir vos dates d’arrivée et de départ.','err.order':'Le départ doit être postérieur à l’arrivée.','err.guests':'Le Chalet Lisa accueille jusqu’à 8 hôtes.'
+    },
+    de: {
+      'nav.chalet':'Das Chalet','nav.spaces':'Wohnräume','nav.seasons':'Jahreszeiten','nav.location':'Lage','cta':'Direkt anfragen',
+      'hero.eyebrow':'Les Clèves · Nendaz · Wallis',
+      'hero.title':'<span class="nw">Ski-in,</span> <span class="nw">Ski-out-Refugium</span> im Herzen der 4 Vallées.',
+      'hero.sub':'Privates Alpenchalet auf 3 Etagen in Les Clèves, Nendaz. Panoramablick über das Rhonetal und die Berner Alpen — für bis zu 8 Gäste.',
+      'fact.1':'8 Gäste','fact.2':'3 Schlafzimmer & 3 Bäder','fact.3':'Direkter Pistenzugang','fact.4':'E-Ladestation & Garage',
+      'chalet.eyebrow':'Das Chalet','chalet.title':'Ein ruhiges Haus an der Piste.',
+      'chalet.lead':'Drei Etagen aus Holz, Wärme und Licht in Les Clèves — neben der Seilbahn von Nendaz, mit dem Rhonetal und den Berner Alpen zu Füssen.',
+      'f1.t':'Echtes Ski-in / Ski-out','f1.d':'Direkt an der Piste, neben der Seilbahn von Nendaz. Anschnallen vor der Tür.',
+      'f2.t':'Holzkamin','f2.d':'Ein echtes Holzfeuer im Mittelpunkt des offenen Wohnraums.',
+      'f3.t':'Fussbodenheizung','f3.d':'Ruhige, gleichmässige Wärme nach einem Tag am Berg.',
+      'f4.t':'Sonnenterrassen Ost & West','f4.d':'Eine umlaufende Terrasse, die der Sonne vom Morgen bis zum Abend folgt.',
+      'f5.t':'Garten & Grill','f5.d':'Ein angelegter Garten mit Grill für lange Alpenabende.',
+      'f6.t':'Skischuhraum','f6.d':'Ein eigener, beheizter Raum für Schuhe, Ski und Ausrüstung.',
+      'f7.t':'Garage & E-Ladestation','f7.d':'Private Garage mit Ladestation für E-Autos sowie ein zweiter Parkplatz.',
+      'f8.t':'Der Alpentisch','f8.d':'Raclette- und Fondue-Sets für den Abend, Nespresso für den Morgen.',
+      'f9.t':'Familienfreundlich','f9.d':'Treppenschutzgitter, Kinderbett und Hochstuhl stehen bereit.',
+      'f10.t':'Betreuung vor Ort','f10.d':'Während des gesamten Aufenthalts vor Ort betreut von Altiservices.',
+      'spaces.eyebrow':'Wohnräume','spaces.title':'Drei Etagen, ein ruhiger Rhythmus.',
+      'spaces.lead':'Wohnen im Hauptgeschoss, Ruhe darunter und eine stille Galerie darüber — drei Schlafzimmer und drei Bäder für bis zu acht Gäste.',
+      'tab.main':'Hauptgeschoss','tab.lower':'Untergeschoss','tab.mezz':'Galerie',
+      'main.h':'Zusammen am Feuer.','main.p':'Ein offenes Wohngeschoss mit Holzfeuer, Küche und Essbereich, das sich zur umlaufenden Terrasse und zum Grillgarten öffnet.',
+      'main.1':'Offener Wohnraum mit Holzfeuer','main.2':'Küche','main.3':'Essbereich','main.4':'Badezimmer','main.5':'Umlaufende Terrasse & Grillgarten',
+      'lower.h':'Ausruhen, dann zurück auf die Piste.','lower.p':'Zwei Schlafzimmer, jedes mit eigenem Bad, und ein beheizter Skischuhraum für den Morgen.',
+      'lower.1':'Hauptschlafzimmer mit Doppelbett und Bad en suite','lower.2':'Etagenbettzimmer mit 4 Betten in Erwachsenengrösse','lower.3':'Eigenes Bad für das Etagenbettzimmer','lower.4':'Beheizter Skischuhraum',
+      'mezz.h':'Ein Zimmer über allem.','mezz.p':'Das Doppelzimmer im obersten Geschoss, mit Schreibnische und Blick in den Wohnraum.',
+      'mezz.1':'Doppelzimmer im obersten Geschoss','mezz.2':'Schreibnische','mezz.3':'Blick in den Wohnraum',
+      'seasons.eyebrow':'Jahreszeiten','seasons.title':'Ein Chalet, zwei Bergwelten.','season.winter':'Winter','season.summer':'Sommer',
+      'winter.cap':'Direkter Zugang zu über 410 km Pisten zwischen Nendaz und Verbier.',
+      'winter.1':'Kein Skibus — mit den Ski ab der Haustür','winter.2':'Neben der Seilbahn von Nendaz','winter.3':'Das gesamte Skigebiet 4 Vallées','winter.4':'Beheizter Skischuhraum, Holzfeuer bei der Rückkehr',
+      'summer.big':'Suonen','summer.cap':'Wanderungen entlang der historischen Suonen (Bisses) und langes Licht auf den Terrassen.',
+      'summer.1':'Wanderungen auf den historischen Suonenwegen','summer.2':'Mountainbiken','summer.3':'Tagesausflüge nach Chamonix','summer.4':'Tagesausflüge an die italienischen Seen',
+      'loc.eyebrow':'Lage','loc.title':'Les Clèves, über dem Rhonetal.',
+      'loc.lead':'Das Chalet Lisa liegt in Les Clèves, Nendaz, im Herzen der 4 Vallées — mit Panoramablick über das Rhonetal bis zu den Berner Alpen.',
+      'loc.map':'In Maps öffnen',
+      'loc.k1':'Adresse','loc.v1':'Les Clèves, Nendaz, Wallis, Schweiz','loc.k2':'Skigebiet','loc.v2':'4 Vallées · Nendaz & Verbier',
+      'loc.k3':'Bergbahn','loc.v3':'Neben der Seilbahn von Nendaz','loc.k4':'Aussicht','loc.v4':'Rhonetal & Berner Alpen','loc.k5':'Ausflüge','loc.v5':'Chamonix & die italienischen Seen',
+      'inq.eyebrow':'Direktbuchung · Keine Provision','inq.title1':'Direkt buchen —','inq.title2':'ohne Plattformgebühren',
+      'inq.lead':'Fragen Sie direkt beim Eigentümer an. Keine Buchungsplattform dazwischen, keine Provision — nur eine persönliche Antwort.',
+      'inq.tag':'Saisons 2026 / 2027','inq.email':'E-Mail','inq.phone':'Telefon',
+      'form.in':'Anreise','form.out':'Abreise','form.adults':'Erwachsene','form.kids':'Kinder','form.name':'Ihr Name','form.notes':'Anmerkungen (optional)',
+      'form.notes.ph':'Gibt es etwas, das wir wissen sollten?','form.preview':'Ihre Nachricht','form.mail':'Per E-Mail senden','form.wa':'Per WhatsApp senden',
+      'foot.addr':'Les Clèves, Nendaz, Wallis, Schweiz','foot.credit':'Gestaltet von Jacob Web Design',
+      'msg.hello':'Guten Tag, ich möchte eine Direktbuchung für das Chalet Lisa anfragen.',
+      'msg.in':'Anreise','msg.out':'Abreise','msg.nights':'Nächte','msg.guests':'Gäste','msg.name':'Name','msg.notes':'Anmerkungen',
+      'msg.adult':'Erwachsener','msg.adults':'Erwachsene','msg.child':'Kind','msg.children':'Kinder','msg.subject':'Chalet Lisa — Direktanfrage','msg.thanks':'Vielen Dank.',
+      'err.dates':'Bitte wählen Sie An- und Abreisedatum.','err.order':'Die Abreise muss nach der Anreise liegen.','err.guests':'Das Chalet Lisa bietet Platz für bis zu 8 Gäste.'
+    }
+  };
+  var LOCALE = { en:'en-GB', fr:'fr-CH', de:'de-CH' };
+  var lang = 'en';
+  function t(k){ return (I18N[lang] && I18N[lang][k]) || I18N.en[k] || k; }
+
+  function applyLang(){
+    root.lang = lang;
+    $$('[data-i18n]').forEach(function(el){
+      var v = t(el.getAttribute('data-i18n'));
+      // Only our own static strings reach innerHTML (no-wrap spans in the headline).
+      if(el.hasAttribute('data-i18n-html')) el.innerHTML = v; else el.textContent = v;
+    });
+    $$('[data-i18n-ph]').forEach(function(el){ el.placeholder = t(el.getAttribute('data-i18n-ph')); });
+    $$('.lang button').forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.lang === lang)); });
+    showError(errKey);
+    render();
+  }
+  var swapTimer;
+  function setLang(next, instant){
+    if(!I18N[next] || next === lang) return;
+    lang = next;
+    try{ localStorage.setItem('chalet-lisa-lang', lang); }catch(e){}
+    clearTimeout(swapTimer);
+    if(instant){ applyLang(); return; }
+    doc.body.classList.add('lang-swap');
+    swapTimer = setTimeout(function(){ applyLang(); doc.body.classList.remove('lang-swap'); }, 230);
+  }
+  $$('.lang button').forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.lang); }); });
+
+  /* ---------- Header & mobile menu ---------- */
+  var header = $('#header'), burger = $('#burger'), drawer = $('#drawer');
+  function onScroll(){ header.classList.toggle('is-scrolled', window.scrollY > 24); }
+  window.addEventListener('scroll', onScroll, { passive:true }); onScroll();
+  function setMenu(open){
+    drawer.classList.toggle('is-open', open);
+    burger.setAttribute('aria-expanded', String(open));
+  }
+  burger.addEventListener('click', function(){ setMenu(burger.getAttribute('aria-expanded') !== 'true'); });
+  drawer.addEventListener('click', function(e){ if(e.target.closest('a')) setMenu(false); });
+  doc.addEventListener('keydown', function(e){ if(e.key === 'Escape') setMenu(false); });
+
+  /* ---------- Tabs (floors & seasons) ---------- */
+  $$('[data-tabs]').forEach(function(list){
+    var tabs = $$('[role="tab"]', list);
+    function select(tab, focus){
+      tabs.forEach(function(x){
+        var on = x === tab;
+        x.setAttribute('aria-selected', String(on));
+        x.tabIndex = on ? 0 : -1;
+        $('#' + x.getAttribute('aria-controls')).hidden = !on;
+      });
+      if(tab.dataset.season){
+        list.dataset.active = tab.dataset.season;
+        $$('[data-season-img]').forEach(function(img){ img.classList.toggle('is-on', img.dataset.seasonImg === tab.dataset.season); });
+      }
+      if(focus) tab.focus();
+    }
+    tabs.forEach(function(tab, i){
+      tab.addEventListener('click', function(){ select(tab); });
+      tab.addEventListener('keydown', function(e){
+        var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if(!d) return;
+        e.preventDefault();
+        select(tabs[(i + d + tabs.length) % tabs.length], true);
+      });
+    });
+  });
+
+  /* ---------- Inquiry form ---------- */
+  var fIn = $('#in'), fOut = $('#out'), fAdults = $('#adults'), fKids = $('#kids'), fName = $('#name'), fNotes = $('#notes');
+  var preview = $('#preview'), errorEl = $('#error'), errKey = '';
+  function iso(d){ return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); }
+  function parse(v){ var p = v.split('-'); return p.length === 3 ? new Date(+p[0], +p[1] - 1, +p[2]) : null; }
+  function fmt(v){
+    var d = parse(v); if(!d) return '—';
+    return new Intl.DateTimeFormat(LOCALE[lang], { weekday:'short', day:'numeric', month:'long', year:'numeric' }).format(d);
+  }
+  function nights(){
+    var a = parse(fIn.value), b = parse(fOut.value);
+    return a && b ? Math.round((b - a) / 864e5) : 0;
+  }
+  function guests(){
+    var a = +fAdults.value, k = +fKids.value;
+    var s = a + ' ' + t(a === 1 ? 'msg.adult' : 'msg.adults');
+    if(k) s += ', ' + k + ' ' + t(k === 1 ? 'msg.child' : 'msg.children');
+    return s;
+  }
+  function message(){
+    var c = lang === 'fr' ? ' : ' : ': ';
+    var n = nights(), lines = [t('msg.hello'), '',
+      t('msg.in') + c + fmt(fIn.value),
+      t('msg.out') + c + fmt(fOut.value)];
+    if(n > 0) lines.push(t('msg.nights') + c + n);
+    lines.push(t('msg.guests') + c + guests());
+    if(fName.value.trim()) lines.push(t('msg.name') + c + fName.value.trim());
+    if(fNotes.value.trim()) lines.push(t('msg.notes') + c + fNotes.value.trim());
+    lines.push('', t('msg.thanks'));
+    return lines.join('\n');
+  }
+  function validate(){
+    if(!fIn.value || !fOut.value) return 'err.dates';
+    if(nights() < 1) return 'err.order';
+    if(+fAdults.value + +fKids.value > 8) return 'err.guests';
+    return '';
+  }
+  function showError(k){ errKey = k; errorEl.textContent = k ? t(k) : ''; }
+  function render(){ preview.textContent = message(); }
+  function onChange(){
+    if(fIn.value){
+      var next = parse(fIn.value); next.setDate(next.getDate() + 1);
+      fOut.min = iso(next);
+    }
+    if(errKey) showError(validate());
+    render();
+  }
+  fIn.min = iso(new Date());
+  fOut.min = fIn.min;
+  [fIn, fOut, fAdults, fKids, fName, fNotes].forEach(function(el){
+    el.addEventListener('input', onChange);
+    el.addEventListener('change', onChange);
+  });
+  function send(kind){
+    var k = validate();
+    showError(k);
+    if(k){ (!fIn.value ? fIn : fOut).focus(); return; }
+    var body = message();
+    if(kind === 'wa'){
+      window.open('https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(body), '_blank', 'noopener');
+    } else {
+      window.location.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(t('msg.subject')) +
+        '&body=' + encodeURIComponent(body.replace(/\n/g, '\r\n'));
+    }
+  }
+  $('#sendMail').addEventListener('click', function(){ send('mail'); });
+  $('#sendWa').addEventListener('click', function(){ send('wa'); });
+  $('#form').addEventListener('submit', function(e){ e.preventDefault(); send('mail'); });
+
+  /* ---------- Scroll reveal & current nav link ---------- */
+  var reveals = $$('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(!en.isIntersecting) return;
+        en.target.classList.add('is-in');
+        io.unobserve(en.target);
+      });
+    }, { rootMargin:'0px 0px -8% 0px', threshold:.08 });
+    reveals.forEach(function(el){ io.observe(el); });
+    // Stagger features that share a row.
+    $$('.feat').forEach(function(el, i){ el.style.setProperty('--d', (i % 2) * .12 + 's'); });
+
+    var links = $$('.nav a');
+    var spy = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(!en.isIntersecting) return;
+        links.forEach(function(a){ a.classList.toggle('is-current', a.getAttribute('href') === '#' + en.target.id); });
+      });
+    }, { rootMargin:'-45% 0px -50% 0px' });
+    $$('main section[id]').forEach(function(s){ spy.observe(s); });
+  } else {
+    reveals.forEach(function(el){ el.classList.add('is-in'); });
+  }
+
+  /* ---------- Init ---------- */
+  var saved = null;
+  try{ saved = localStorage.getItem('chalet-lisa-lang'); }catch(e){}
+  if(saved && I18N[saved] && saved !== 'en') setLang(saved, true); else render();
+})();
+</script>
+</body>
+</html>
