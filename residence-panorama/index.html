@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Résidence Panorama — Appartements alpins à Villars-sur-Ollon</title>
+<meta name="description" content="Appartements alpins de caractère à Villars-sur-Ollon, entre 1 300 et 2 200 m d’altitude — du studio au 4 pièces, face aux Dents-du-Midi. Réservation directe, sans frais de plateforme.">
+<meta name="theme-color" content="#F8F7F4">
+<meta property="og:title" content="Résidence Panorama — Villars-sur-Ollon · Alpes vaudoises">
+<meta property="og:description" content="Face aux Dents-du-Midi, au cœur de Villars-sur-Ollon. Du studio au 4 pièces — réservation directe.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1200&q=80">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --alabaster:#F8F7F4;
+  --snow:#FFFFFF;
+  --ink:#141619;
+  --stone:#6E7278;
+  --bronze:#9A7B56;
+  --hair:rgba(20,22,25,.08);
+  --serif:"Cormorant Garamond","Times New Roman",serif;
+  --sans:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --header-h:76px;
+  --pad:clamp(20px,5vw,64px);
+  --section:clamp(88px,12vw,168px);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--header-h);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--alabaster);color:var(--ink);font-family:var(--sans);font-size:16px;font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:0;padding:0;cursor:pointer}
+ul{list-style:none;margin:0;padding:0}
+h1,h2,h3,p{margin:0}
+[hidden]{display:none!important}
+.nw{white-space:nowrap}
+:focus-visible{outline:1px solid var(--bronze);outline-offset:4px}
+.wrap{width:100%;max-width:1320px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:10px 16px;z-index:100;font-size:13px}
+.skip:focus{left:8px}
+
+/* Type */
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--bronze)}
+.display{font-family:var(--serif);font-weight:300;font-size:clamp(2.25rem,5vw,4rem);line-height:1.06;letter-spacing:-.01em}
+.lead{color:var(--stone);font-size:clamp(1rem,1.25vw,1.125rem);max-width:54ch}
+[data-i18n]{transition:opacity .22s ease}
+.lang-swap [data-i18n]{opacity:0}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:46px;padding:0 26px;border-radius:999px;background:var(--ink);color:#fff;font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;border:1px solid var(--ink);transition:background .35s var(--ease),color .35s var(--ease),border-color .35s var(--ease)}
+.btn:hover{background:transparent;color:var(--ink)}
+.btn--ghost{background:transparent;color:var(--ink);border-color:rgba(20,22,25,.22)}
+.btn--ghost:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.link{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding-bottom:6px;border-bottom:1px solid var(--bronze);transition:gap .35s var(--ease),color .35s}
+.link:hover{gap:16px;color:var(--bronze)}
+
+/* Header */
+.header{position:fixed;inset:0 0 auto 0;z-index:50;height:var(--header-h);background:rgba(248,247,244,.66);-webkit-backdrop-filter:blur(16px) saturate(160%);backdrop-filter:blur(16px) saturate(160%);border-bottom:1px solid var(--hair);transition:background .4s ease}
+.header.is-scrolled{background:rgba(248,247,244,.82)}
+.header__in{height:100%;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px}
+.brand{display:inline-flex;flex-direction:column;gap:5px;justify-self:start;line-height:1}
+.brand b{font-family:var(--serif);font-weight:500;font-size:19px;letter-spacing:.3em}
+.brand span{font-size:8.5px;font-weight:500;letter-spacing:.28em;color:var(--stone)}
+.nav{display:flex;gap:clamp(20px,3vw,44px)}
+.nav a{position:relative;font-size:12px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;padding:8px 0;white-space:nowrap}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:1px;background:var(--bronze);transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease)}
+.nav a:hover::after,.nav a.is-current::after{transform:scaleX(1)}
+.header__end{display:flex;align-items:center;gap:22px;justify-self:end}
+.lang{display:flex;align-items:center;gap:2px}
+.lang button{font-size:11px;font-weight:500;letter-spacing:.14em;color:var(--stone);padding:8px 6px;transition:color .3s}
+.lang button + button{position:relative;margin-left:6px}
+.lang button + button::before{content:"";position:absolute;left:-4px;top:50%;width:1px;height:10px;margin-top:-5px;background:rgba(20,22,25,.16)}
+.lang button:hover,.lang button[aria-pressed="true"]{color:var(--ink)}
+.lang button[aria-pressed="true"]{text-decoration:underline;text-decoration-color:var(--bronze);text-underline-offset:6px}
+.header .btn{min-height:40px;padding:0 20px;font-size:11px}
+.burger{display:none;width:40px;height:40px;position:relative}
+.burger i{position:absolute;left:10px;right:10px;height:1px;background:var(--ink);transition:transform .4s var(--ease),top .4s var(--ease)}
+.burger i:first-child{top:16px}.burger i:last-child{top:23px}
+.burger[aria-expanded="true"] i:first-child{top:20px;transform:rotate(45deg)}
+.burger[aria-expanded="true"] i:last-child{top:20px;transform:rotate(-45deg)}
+.drawer{display:none}
+
+/* Hero */
+.hero{position:relative;height:100vh;height:100svh;min-height:540px;color:#fff;overflow:hidden;display:flex;align-items:flex-end;background:#2a2d31}
+.hero__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:38% 50%;animation:heroZoom 2.4s var(--ease) both}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(20,22,25,.9) 0%,rgba(20,22,25,.72) 30%,rgba(20,22,25,.44) 56%,rgba(20,22,25,.1) 80%,rgba(20,22,25,0) 100%)}
+.hero__in{position:relative;z-index:1;padding-bottom:clamp(20px,3.2vw,40px)}
+.hero .eyebrow{color:#E4D3BC}
+.hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(2.2rem,5.6vw,5rem);line-height:1.02;letter-spacing:-.012em;max-width:20ch;margin:18px 0 22px;text-wrap:balance;text-shadow:0 1px 30px rgba(20,22,25,.25)}
+.hero__sub{max-width:56ch;font-size:clamp(.94rem,1.2vw,1.0625rem);color:rgba(255,255,255,.84)}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);margin-top:clamp(28px,5vw,60px);border-top:1px solid rgba(255,255,255,.24)}
+.facts li{padding:18px 20px 0 0;font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.92)}
+.facts li + li{padding-left:20px;border-left:1px solid rgba(255,255,255,.16)}
+.hero__in > *{animation:rise 1.2s var(--ease) both}
+.hero__in > :nth-child(2){animation-delay:.12s}
+.hero__in > :nth-child(3){animation-delay:.24s}
+.hero__in > :nth-child(4){animation-delay:.38s}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes heroZoom{from{transform:scale(1.06)}to{transform:none}}
+
+/* Sections */
+section{padding:var(--section) 0}
+.snow{background:var(--snow);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+.head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px clamp(32px,6vw,96px);align-items:end;margin-bottom:clamp(44px,7vw,88px)}
+.head .display{margin-top:18px}
+.head .lead{justify-self:end}
+
+/* Chalet grid */
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(32px,6vw,96px);border-bottom:1px solid var(--hair)}
+.feat{display:grid;grid-template-columns:44px 1fr;align-content:start;gap:4px 12px;padding:30px 0;border-top:1px solid var(--hair)}
+.feat__n{font-size:11px;font-weight:500;letter-spacing:.16em;color:var(--bronze);padding-top:10px}
+.feat h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.4rem,2vw,1.7rem);line-height:1.2}
+.feat p{grid-column:2;color:var(--stone);font-size:.94rem;max-width:44ch}
+
+/* Tabs */
+.tabs{display:flex;gap:clamp(22px,4vw,52px);border-bottom:1px solid var(--hair);overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{position:relative;padding:18px 0;font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--stone);white-space:nowrap;transition:color .3s}
+.tabs button::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.tabs button[aria-selected="true"]{color:var(--ink)}
+.tabs button[aria-selected="true"]::after{transform:scaleX(1)}
+.floor{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:32px clamp(32px,6vw,96px);padding-top:clamp(40px,6vw,72px)}
+[role="tabpanel"]:not([hidden]){animation:panel .7s var(--ease) both}
+@keyframes panel{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.floor__n{font-family:var(--serif);font-weight:300;font-size:clamp(4.5rem,10vw,8.5rem);line-height:.82;color:var(--bronze);opacity:.55}
+.floor h3{font-family:var(--serif);font-weight:300;font-size:clamp(1.8rem,3.2vw,2.75rem);line-height:1.1;margin:22px 0 14px}
+.floor p{color:var(--stone);max-width:42ch}
+.rooms li{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:20px 0;border-top:1px solid var(--hair);font-family:var(--serif);font-size:clamp(1.2rem,1.9vw,1.5rem);line-height:1.3}
+.rooms li:last-child{border-bottom:1px solid var(--hair)}
+.rooms small{flex:none;font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.16em;color:var(--bronze)}
+
+/* Seasons */
+.season-head{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;flex-wrap:wrap;margin-bottom:clamp(40px,6vw,72px)}
+.season-head .display{margin-top:18px}
+.pill{position:relative;display:inline-grid;grid-template-columns:1fr 1fr;padding:4px;border:1px solid var(--hair);border-radius:999px;background:var(--alabaster)}
+.pill::before{content:"";position:absolute;top:4px;bottom:4px;left:4px;width:calc(50% - 4px);border-radius:999px;background:var(--ink);transition:transform .55s var(--ease)}
+.pill[data-active="summer"]::before{transform:translateX(100%)}
+.pill button{position:relative;min-width:116px;padding:11px 22px;font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--stone);transition:color .4s}
+.pill button[aria-selected="true"]{color:#fff}
+.season{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:32px clamp(32px,6vw,96px);align-items:center}
+.season__media{position:relative;aspect-ratio:5/4;overflow:hidden;background:#e9e7e2}
+.season__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.04);transition:opacity 1s var(--ease),transform 1.6s var(--ease)}
+.season__media img.is-on{opacity:1;transform:none}
+.season__big{font-family:var(--serif);font-weight:300;font-size:clamp(4rem,9vw,7.5rem);line-height:.9;letter-spacing:-.02em}
+.season__big sup{font-size:.32em;letter-spacing:.04em;color:var(--bronze);vertical-align:top;position:relative;top:.5em;margin-left:.3em}
+.season__cap{margin:14px 0 30px;color:var(--stone);max-width:36ch}
+.ticks li{padding:15px 0;border-top:1px solid var(--hair);font-size:.95rem;display:flex;gap:16px}
+.ticks li:last-child{border-bottom:1px solid var(--hair)}
+.ticks li::before{content:"";flex:none;width:14px;height:1px;background:var(--bronze);margin-top:.85em}
+
+/* Location */
+.loc{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px clamp(32px,6vw,96px)}
+.loc .display{margin:18px 0 26px}
+.loc .lead{margin-bottom:34px}
+.dl{margin:0;border-bottom:1px solid var(--hair);align-self:end}
+.dl div{display:grid;grid-template-columns:minmax(96px,1fr) 2.4fr;gap:16px;padding:22px 0;border-top:1px solid var(--hair);align-items:baseline}
+.dl dt{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--stone)}
+.dl dd{margin:0;font-family:var(--serif);font-size:clamp(1.2rem,1.9vw,1.5rem);line-height:1.3}
+
+/* Inquiry */
+.card{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);background:var(--alabaster);border:1px solid var(--hair)}
+.card__a{padding:clamp(28px,5vw,64px);border-right:1px solid var(--hair);display:flex;flex-direction:column}
+.card__a .display{font-size:clamp(2rem,3.8vw,3.25rem);margin:18px 0 20px}
+.card__a .display em{font-style:italic;color:var(--bronze)}
+.seasons-tag{display:inline-block;margin-top:26px;padding:8px 16px;border:1px solid rgba(154,123,86,.4);border-radius:999px;font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--bronze);align-self:flex-start}
+.contact{margin-top:auto;padding-top:40px}
+.contact a{display:block;padding:18px 0;border-top:1px solid var(--hair);transition:color .3s}
+.contact a:last-child{border-bottom:1px solid var(--hair)}
+.contact a:hover{color:var(--bronze)}
+.contact small{display:block;font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--stone);margin-bottom:4px}
+.contact span{font-family:var(--serif);font-size:clamp(1.15rem,1.8vw,1.45rem);word-break:break-word}
+.form{padding:clamp(28px,5vw,64px);background:var(--snow);display:grid;grid-template-columns:1fr 1fr;gap:26px 28px;align-content:start}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field--full{grid-column:1/-1}
+.field label,.preview small{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--stone)}
+.field input,.field select,.field textarea{width:100%;min-width:0;height:46px;padding:0;background:transparent;border:0;border-bottom:1px solid rgba(20,22,25,.18);border-radius:0;font-size:16px;font-weight:300;outline:none;transition:border-color .3s;-webkit-appearance:none;appearance:none}
+.field textarea{height:auto;min-height:46px;padding:11px 0;resize:vertical;line-height:1.5}
+.field select{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%236E7278'/%3E%3C/svg%3E") no-repeat right 2px center}
+.field input:focus,.field select:focus,.field textarea:focus{border-bottom-color:var(--bronze)}
+.field ::placeholder{color:#a9acb0}
+.preview{grid-column:1/-1;border:1px solid var(--hair);background:var(--alabaster);padding:20px 22px}
+.preview pre{margin:10px 0 0;font-family:var(--sans);font-size:.875rem;line-height:1.75;white-space:pre-wrap;word-break:break-word;color:var(--ink)}
+.actions{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:12px}
+.actions .btn{flex:1 1 200px}
+.error{grid-column:1/-1;min-height:1.4em;margin-top:-10px;font-size:.84rem;color:#9a4b3c}
+
+/* Footer */
+.footer{padding:44px 0 calc(44px + env(safe-area-inset-bottom));font-size:12px;color:var(--stone);letter-spacing:.04em}
+.footer__in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 32px;align-items:baseline}
+.footer b{font-family:var(--serif);font-weight:500;font-size:15px;letter-spacing:.26em;color:var(--ink);margin-right:14px}
+.footer .credit{font-size:11px;opacity:.75}
+
+/* Scroll reveal (only when JS is running) */
+.js .reveal{opacity:0;transform:translateY(26px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease);transition-delay:var(--d,0s)}
+.js .reveal.is-in{opacity:1;transform:none}
+
+@media (max-width:1080px){
+  .nav,.header .btn{display:none}
+  .header__in{grid-template-columns:1fr auto}
+  .header__end{gap:10px}
+  .burger{display:block}
+  .drawer{display:block;position:fixed;inset:var(--header-h) 0 auto 0;z-index:49;padding:10px var(--pad) 30px;background:rgba(248,247,244,.9);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom:1px solid var(--hair);opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .4s var(--ease),transform .4s var(--ease),visibility .4s}
+  .drawer.is-open{opacity:1;visibility:visible;transform:none}
+  .drawer a:not(.btn){display:block;padding:17px 0;border-bottom:1px solid var(--hair);font-family:var(--serif);font-size:1.6rem;font-weight:300}
+  .drawer .btn{margin-top:26px;width:100%}
+}
+@media (max-width:860px){
+  :root{--header-h:64px}
+  .brand b{font-size:16px;letter-spacing:.26em}
+  .brand span{font-size:7.5px}
+  .head,.floor,.season,.loc,.card,.grid{grid-template-columns:minmax(0,1fr)}
+  .head .lead{justify-self:start}
+  .card__a{border-right:0;border-bottom:1px solid var(--hair)}
+  .facts{grid-template-columns:1fr 1fr}
+  .facts li{padding:13px 12px 13px 0;font-size:10px;letter-spacing:.16em}
+  .facts li + li{padding-left:0;border-left:0}
+  .facts li:nth-child(even){padding-left:16px;border-left:1px solid rgba(255,255,255,.16)}
+  .facts li:nth-child(n+3){border-top:1px solid rgba(255,255,255,.16)}
+  .hero__in{padding-bottom:calc(10px + env(safe-area-inset-bottom))}
+  .hero h1{margin:14px 0 16px}
+  .pill{width:100%}
+  .pill button{min-width:0}
+  .season__media{aspect-ratio:4/3}
+}
+@media (max-width:480px){
+  .form{grid-template-columns:1fr 1fr;gap:22px 18px}
+  .dl div{grid-template-columns:1fr;gap:4px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .reveal{opacity:1;transform:none}
+}
+
+/* Résidence Panorama */
+.brand b{font-size:17px;letter-spacing:.22em;white-space:nowrap}
+.brand span{font-size:8px;letter-spacing:.24em;white-space:nowrap}
+.hero__img{object-position:50% 40%}
+.hero h1{max-width:19ch}
+.hero__sub{text-wrap:pretty}
+@media (max-width:860px){.hero .eyebrow{font-size:9.5px;letter-spacing:.14em}}
+.floor__n{font-size:clamp(3.75rem,8vw,7rem);opacity:1;white-space:nowrap}
+.floor__n sup{font-size:.3em;letter-spacing:.04em;vertical-align:top;position:relative;top:.55em;margin-left:.3em}
+.floor .btn{margin-top:30px}
+.rooms li{font-size:clamp(1.1rem,1.6vw,1.35rem)}
+.rooms small{letter-spacing:.18em;text-transform:uppercase;color:var(--stone);text-align:right}
+.note{margin-top:22px;font-size:.84rem;color:var(--stone)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:clamp(56px,8vw,104px);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+.stats li{padding:30px 24px 28px 0}
+.stats li + li{padding-left:24px;border-left:1px solid var(--hair)}
+.stats b{display:block;font-family:var(--serif);font-weight:300;font-size:clamp(2.2rem,4vw,3.4rem);line-height:1}
+.stats span{display:block;margin-top:10px;font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--stone)}
+.actions a.btn{flex:1 1 200px}
+@media (max-width:860px){
+  .brand b{font-size:13.5px;letter-spacing:.18em}
+  .brand span{font-size:6.5px;letter-spacing:.18em}
+  .stats{grid-template-columns:1fr 1fr}
+  .stats li{padding:22px 12px 20px 0}
+  .stats li + li{padding-left:0;border-left:0}
+  .stats li:nth-child(even){padding-left:16px;border-left:1px solid var(--hair)}
+  .stats li:nth-child(n+3){border-top:1px solid var(--hair)}
+  .rooms li{flex-direction:column-reverse;gap:2px}
+  .rooms small{text-align:left}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">Aller au contenu</a>
+
+<header class="header" id="header">
+  <div class="wrap header__in">
+    <a class="brand" href="#top" aria-label="Résidence Panorama — Villars-sur-Ollon">
+      <b>RÉSIDENCE PANORAMA</b>
+      <span>VILLARS-SUR-OLLON · ALPES VAUDOISES</span>
+    </a>
+    <nav class="nav" aria-label="Navigation">
+      <a href="#residence" data-i18n="nav.res">La Résidence</a>
+      <a href="#appartements" data-i18n="nav.apt">Appartements</a>
+      <a href="#domaine" data-i18n="nav.dom">Le Domaine</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="header__end">
+      <div class="lang" role="group" aria-label="Langue / Language">
+        <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn" href="#contact" data-i18n="cta">Demander un tarif</a>
+      <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="drawer"><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+<div class="drawer" id="drawer">
+  <a href="#residence" data-i18n="nav.res">La Résidence</a>
+  <a href="#appartements" data-i18n="nav.apt">Appartements</a>
+  <a href="#domaine" data-i18n="nav.dom">Le Domaine</a>
+  <a href="#contact" data-i18n="nav.contact">Contact</a>
+  <a class="btn" href="#contact" data-i18n="cta">Demander un tarif</a>
+</div>
+
+<main id="main">
+  <!-- Hero -->
+  <div class="hero" id="top">
+    <img class="hero__img" alt="" role="presentation"
+      src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=2000&q=80"
+      srcset="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=900&q=75 900w,
+              https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1600&q=80 1600w,
+              https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=2600&q=80 2600w"
+      sizes="100vw" fetchpriority="high" decoding="async">
+    <div class="wrap hero__in">
+      <p class="eyebrow" data-i18n="hero.eyebrow">Villars-sur-Ollon · Alpes vaudoises · Suisse</p>
+      <h1 data-i18n="hero.title" data-i18n-html>Face aux <span class="nw">Dents-du-Midi,</span> au cœur de <span class="nw">Villars-sur-Ollon.</span></h1>
+      <p class="hero__sub" data-i18n="hero.sub">Appartements alpins de caractère entre 1 300 et 2 200 m d’altitude — du studio au 4 pièces avec vue panoramique.</p>
+      <ul class="facts">
+        <li data-i18n="fact.1">1 300 – 2 200 m</li>
+        <li data-i18n="fact.2">120 km de pistes</li>
+        <li data-i18n="fact.3">Studios au 4 Pièces</li>
+        <li data-i18n="fact.4">Vue Dents-du-Midi</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- La Résidence -->
+  <section id="residence">
+    <div class="wrap">
+      <div class="head reveal">
+        <div>
+          <p class="eyebrow" data-i18n="res.eyebrow">La Résidence</p>
+          <h2 class="display" data-i18n="res.title">Une adresse alpine, face au panorama.</h2>
+        </div>
+        <p class="lead" data-i18n="res.lead">Au cœur de Villars-sur-Ollon, la Résidence Panorama réunit chambres, studios et appartements du 2 au 4 pièces, face à la vallée du Rhône et aux Dents-du-Midi.</p>
+      </div>
+      <div class="grid">
+        <article class="feat reveal"><span class="feat__n">01</span><h3 data-i18n="r1.t">De la chambre au 4 pièces</h3><p data-i18n="r1.d">Cinq catégories, de 12 à 95 m², pour une à huit personnes.</p></article>
+        <article class="feat reveal"><span class="feat__n">02</span><h3 data-i18n="r2.t">Vue panoramique</h3><p data-i18n="r2.d">La vallée du Rhône et les Dents-du-Midi pour horizon.</p></article>
+        <article class="feat reveal"><span class="feat__n">03</span><h3 data-i18n="r3.t">Cuisines entièrement équipées</h3><p data-i18n="r3.d">Du studio au 4 pièces : lave-vaisselle, micro-onde, machine à café et grille-pain.</p></article>
+        <article class="feat reveal"><span class="feat__n">04</span><h3 data-i18n="r4.t">Couchages modulables</h3><p data-i18n="r4.d">Lits armoires rabattables et lits d’appoint encastrés, selon la taille de votre groupe.</p></article>
+        <article class="feat reveal"><span class="feat__n">05</span><h3 data-i18n="r5.t">Entre 1 300 et 2 200 m</h3><p data-i18n="r5.d">Un village d’altitude, entre pistes de ski, sentiers et golf.</p></article>
+        <article class="feat reveal"><span class="feat__n">06</span><h3 data-i18n="r6.t">Réservation directe</h3><p data-i18n="r6.d">Votre demande arrive à la résidence, sans frais de plateforme.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Appartements -->
+  <section id="appartements" class="snow">
+    <div class="wrap">
+      <div class="head reveal">
+        <div>
+          <p class="eyebrow" data-i18n="apt.eyebrow">Appartements</p>
+          <h2 class="display" data-i18n="apt.title">Cinq façons d’habiter la montagne.</h2>
+        </div>
+        <p class="lead" data-i18n="apt.lead">De la chambre pour un court séjour au 4 pièces familial — choisissez votre catégorie, puis vérifiez la disponibilité directement auprès de la résidence.</p>
+      </div>
+      <div class="reveal">
+        <div class="tabs" role="tablist" aria-label="Catégories" data-tabs>
+          <button type="button" role="tab" id="tab-chambre" aria-controls="panel-chambre" aria-selected="true" data-i18n="tab.chambre">Chambres</button>
+          <button type="button" role="tab" id="tab-studio" aria-controls="panel-studio" aria-selected="false" tabindex="-1" data-i18n="tab.studio">Studios (1 Pièce)</button>
+          <button type="button" role="tab" id="tab-2p" aria-controls="panel-2p" aria-selected="false" tabindex="-1" data-i18n="tab.2p">2 Pièces</button>
+          <button type="button" role="tab" id="tab-3p" aria-controls="panel-3p" aria-selected="false" tabindex="-1" data-i18n="tab.3p">3 Pièces</button>
+          <button type="button" role="tab" id="tab-4p" aria-controls="panel-4p" aria-selected="false" tabindex="-1" data-i18n="tab.4p">4 Pièces</button>
+        </div>
+
+        <div class="floor" role="tabpanel" id="panel-chambre" aria-labelledby="tab-chambre">
+          <div>
+            <div class="floor__n">12–15<sup>m²</sup></div>
+            <h3 data-i18n="chambre.h">Idéales pour un court séjour alpin.</h3>
+            <p data-i18n="chambre.p">Chambres simples et doubles, sobres et calmes, pour une halte à Villars.</p>
+            <button class="btn" type="button" data-pick="chambre" data-i18n="apt.check">Vérifier la disponibilité</button>
+          </div>
+          <ul class="rooms">
+            <li><span data-i18n="chambre.1">1 à 2 personnes</span><small data-i18n="k.cap">Capacité</small></li>
+            <li><span data-i18n="chambre.2">Chambre simple 12 m² · chambre double 15 m²</span><small data-i18n="k.surface">Surface</small></li>
+            <li><span data-i18n="chambre.3">1 lit simple, ou 2 lits simples</span><small data-i18n="k.beds">Couchage</small></li>
+            <li><span data-i18n="chambre.4">Salle de bains avec douche et WC</span><small data-i18n="k.bath">Bain</small></li>
+            <li><span data-i18n="chambre.5">Télévision par câble, WiFi gratuit, bouilloire</span><small data-i18n="k.equip">Équipement</small></li>
+            <li><span data-i18n="chambre.6">Orientation nord, sans balcon</span><small data-i18n="k.view">Vue</small></li>
+          </ul>
+        </div>
+
+        <div class="floor" role="tabpanel" id="panel-studio" aria-labelledby="tab-studio" hidden>
+          <div>
+            <div class="floor__n">37<sup>m²</sup></div>
+            <h3 data-i18n="studio.h">Un espace de vie lumineux, ouvert sur la montagne.</h3>
+            <p data-i18n="studio.p">Séjour et couchage réunis dans une seule pièce claire, avec cuisine ouverte.</p>
+            <button class="btn" type="button" data-pick="studio" data-i18n="apt.check">Vérifier la disponibilité</button>
+          </div>
+          <ul class="rooms">
+            <li><span data-i18n="studio.1">2 à 4 personnes</span><small data-i18n="k.cap">Capacité</small></li>
+            <li><span data-i18n="studio.2">Salon avec cuisine ouverte entièrement équipée</span><small data-i18n="k.living">Séjour</small></li>
+            <li><span data-i18n="studio.3">Grand lit armoire rabattable pour 2 personnes</span><small data-i18n="k.beds">Couchage</small></li>
+            <li><span data-i18n="studio.4">Deux lits d’appoint rabattables possibles, encastrés dans l’entrée</span><small data-i18n="k.extra">Appoint</small></li>
+            <li><span data-i18n="studio.5">Salle de bain avec toilettes</span><small data-i18n="k.bath">Bain</small></li>
+            <li><span data-i18n="studio.6">Regard sur la montagne</span><small data-i18n="k.view">Vue</small></li>
+          </ul>
+        </div>
+
+        <div class="floor" role="tabpanel" id="panel-2p" aria-labelledby="tab-2p" hidden>
+          <div>
+            <div class="floor__n">55<sup>m²</sup></div>
+            <h3 data-i18n="2p.h">Chambre séparée, séjour et cuisine.</h3>
+            <p data-i18n="2p.p">Une chambre indépendante, un salon avec cuisine ouverte et deux salles de bain.</p>
+            <button class="btn" type="button" data-pick="2p" data-i18n="apt.check">Vérifier la disponibilité</button>
+          </div>
+          <ul class="rooms">
+            <li><span data-i18n="2p.1">4 à 6 personnes</span><small data-i18n="k.cap">Capacité</small></li>
+            <li><span data-i18n="2p.2">Chambre indépendante pour 2, avec salle de bain douche-WC</span><small data-i18n="k.bedroom">Chambre</small></li>
+            <li><span data-i18n="2p.3">Salon avec cuisine ouverte entièrement équipée</span><small data-i18n="k.living">Séjour</small></li>
+            <li><span data-i18n="2p.4">Grand lit armoire rabattable dans le salon, pour 2 personnes</span><small data-i18n="k.beds">Couchage</small></li>
+            <li><span data-i18n="2p.5">Deuxième salle de bain-WC</span><small data-i18n="k.bath">Bain</small></li>
+            <li><span data-i18n="2p.6">Deux lits d’appoint rabattables possibles, encastrés dans l’entrée</span><small data-i18n="k.extra">Appoint</small></li>
+          </ul>
+        </div>
+
+        <div class="floor" role="tabpanel" id="panel-3p" aria-labelledby="tab-3p" hidden>
+          <div>
+            <div class="floor__n">88<sup>m²</sup></div>
+            <h3 data-i18n="3p.h">Un grand plan familial, avec balcon.</h3>
+            <p data-i18n="3p.p">Deux chambres indépendantes et un séjour généreux, pensés pour la vie de famille.</p>
+            <button class="btn" type="button" data-pick="3p" data-i18n="apt.check">Vérifier la disponibilité</button>
+          </div>
+          <ul class="rooms">
+            <li><span data-i18n="3p.1">6 à 8 personnes</span><small data-i18n="k.cap">Capacité</small></li>
+            <li><span data-i18n="3p.2">2 chambres indépendantes — grand lit double, lits superposés</span><small data-i18n="k.bedrooms">Chambres</small></li>
+            <li><span data-i18n="3p.3">Grand lit armoire rabattable dans le salon, pour 2 personnes</span><small data-i18n="k.beds">Couchage</small></li>
+            <li><span data-i18n="3p.4">Cuisine ouverte entièrement équipée</span><small data-i18n="k.kitchen">Cuisine</small></li>
+            <li><span data-i18n="3p.5">Salle de bain avec baignoire et WC, plus un WC séparé</span><small data-i18n="k.bath">Bain</small></li>
+            <li><span data-i18n="3p.6">Balcon</span><small data-i18n="k.outside">Extérieur</small></li>
+          </ul>
+        </div>
+
+        <div class="floor" role="tabpanel" id="panel-4p" aria-labelledby="tab-4p" hidden>
+          <div>
+            <div class="floor__n">95<sup>m²</sup></div>
+            <h3 data-i18n="4p.h">Une grande résidence au-dessus de la vallée du Rhône.</h3>
+            <p data-i18n="4p.p">Trois chambres indépendantes et deux salles de bain, pour les séjours à plusieurs.</p>
+            <button class="btn" type="button" data-pick="4p" data-i18n="apt.check">Vérifier la disponibilité</button>
+          </div>
+          <ul class="rooms">
+            <li><span data-i18n="4p.1">6 à 8 personnes</span><small data-i18n="k.cap">Capacité</small></li>
+            <li><span data-i18n="4p.2">3 chambres indépendantes — grand lit double, 2 lits jumeaux, 2 lits superposés</span><small data-i18n="k.bedrooms">Chambres</small></li>
+            <li><span data-i18n="4p.3">Cuisine ouverte entièrement équipée</span><small data-i18n="k.kitchen">Cuisine</small></li>
+            <li><span data-i18n="4p.4">Deux salles de bain — bain et WC, douche et WC</span><small data-i18n="k.bath">Bain</small></li>
+            <li><span data-i18n="4p.5">Deux lits d’appoint rabattables possibles, encastrés dans l’entrée</span><small data-i18n="k.extra">Appoint</small></li>
+            <li><span data-i18n="4p.6">Vue sur la vallée du Rhône</span><small data-i18n="k.view">Vue</small></li>
+          </ul>
+        </div>
+        <p class="note" data-i18n="apt.note">L’agencement peut varier d’un appartement à l’autre.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Le Domaine -->
+  <section id="domaine">
+    <div class="wrap">
+      <div class="season-head reveal">
+        <div>
+          <p class="eyebrow" data-i18n="dom.eyebrow">Le Domaine</p>
+          <h2 class="display" data-i18n="dom.title">Villars, hiver comme été.</h2>
+        </div>
+        <div class="pill" role="tablist" aria-label="Saison" data-tabs data-active="winter" id="seasonPill">
+          <button type="button" role="tab" id="tab-winter" aria-controls="panel-winter" aria-selected="true" data-season="winter" data-i18n="season.winter">Hiver</button>
+          <button type="button" role="tab" id="tab-summer" aria-controls="panel-summer" aria-selected="false" tabindex="-1" data-season="summer" data-i18n="season.summer">Été</button>
+        </div>
+      </div>
+      <div class="season reveal">
+        <div class="season__media">
+          <img class="is-on" data-season-img="winter" loading="lazy" decoding="async" alt="" role="presentation"
+            src="https://images.unsplash.com/photo-1605540436563-5bca919ae766?auto=format&fit=crop&w=1400&q=80">
+          <img data-season-img="summer" loading="lazy" decoding="async" alt="" role="presentation"
+            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1400&q=80">
+        </div>
+        <div>
+          <div role="tabpanel" id="panel-winter" aria-labelledby="tab-winter">
+            <div class="season__big">120<sup>KM</sup></div>
+            <p class="season__cap" data-i18n="winter.cap">de pistes de ski, entre 1 300 et 2 200 m d’altitude.</p>
+            <ul class="ticks">
+              <li data-i18n="winter.1">120 km de pistes de ski</li>
+              <li data-i18n="winter.2">45 remontées mécaniques</li>
+              <li data-i18n="winter.3">Un domaine entre 1 300 et 2 200 m</li>
+              <li data-i18n="winter.4">Piscines chauffées</li>
+            </ul>
+          </div>
+          <div role="tabpanel" id="panel-summer" aria-labelledby="tab-summer" hidden>
+            <div class="season__big">300<sup>KM</sup></div>
+            <p class="season__cap" data-i18n="summer.cap">de sentiers de randonnée balisés, entre 1 300 et 2 200 m d’altitude.</p>
+            <ul class="ticks">
+              <li data-i18n="summer.1">300 km de sentiers balisés</li>
+              <li data-i18n="summer.2">Golf 18 trous</li>
+              <li data-i18n="summer.3">VTT et parapente</li>
+              <li data-i18n="summer.4">Piscines chauffées</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <ul class="stats reveal">
+        <li><b>120 km</b><span data-i18n="stat.1">Pistes de ski</span></li>
+        <li><b>45</b><span data-i18n="stat.2">Remontées mécaniques</span></li>
+        <li><b>300 km</b><span data-i18n="stat.3">Sentiers balisés</span></li>
+        <li><b>18</b><span data-i18n="stat.4">Trous de golf</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="snow">
+    <div class="wrap">
+      <div class="card reveal">
+        <div class="card__a">
+          <p class="eyebrow" data-i18n="inq.eyebrow">Réservation directe · Sans frais de plateforme</p>
+          <h2 class="display"><span data-i18n="inq.title1">Réservez en direct —</span> <em data-i18n="inq.title2">sans frais de plateforme</em></h2>
+          <p class="lead" data-i18n="inq.lead">Adressez votre demande à la résidence. Aucun intermédiaire, aucune commission — une réponse directe avec votre tarif.</p>
+          <div class="contact">
+            <a href="mailto:info@residencepanoramavillars.com"><small data-i18n="inq.email">E-mail</small><span>info@residencepanoramavillars.com</span></a>
+            <a href="tel:+41244962111"><small data-i18n="inq.phone1">Téléphone 1</small><span>+41 24 496 21 11</span></a>
+            <a href="tel:+41244962133"><small data-i18n="inq.phone2">Téléphone 2</small><span>+41 24 496 21 33</span></a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=R%C3%A9sidence+Panorama%2C+Route+du+Village%2C+1884+Villars-sur-Ollon" target="_blank" rel="noopener"><small data-i18n="inq.addr">Adresse</small><span data-i18n="inq.addr.v">Route du Village, Case postale 184, CH-1884 Villars-sur-Ollon, Suisse</span></a>
+          </div>
+        </div>
+        <form class="form" id="form" novalidate>
+          <div class="field field--full"><label for="type" data-i18n="form.type">Type d’appartement</label>
+            <select id="type" name="type">
+              <option value="chambre" data-i18n="opt.chambre">Chambre</option>
+              <option value="studio" data-i18n="opt.studio" selected>Studio (1 pièce)</option>
+              <option value="2p" data-i18n="opt.2p">2 pièces</option>
+              <option value="3p" data-i18n="opt.3p">3 pièces</option>
+              <option value="4p" data-i18n="opt.4p">4 pièces</option>
+            </select></div>
+          <div class="field"><label for="in" data-i18n="form.in">Arrivée</label><input type="date" id="in" name="in" required></div>
+          <div class="field"><label for="out" data-i18n="form.out">Départ</label><input type="date" id="out" name="out" required></div>
+          <div class="field"><label for="guests" data-i18n="form.guests">Personnes</label>
+            <select id="guests" name="guests"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select></div>
+          <div class="field"><label for="name" data-i18n="form.name">Nom</label><input type="text" id="name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="email" data-i18n="form.email">E-mail</label><input type="email" id="email" name="email" autocomplete="email"></div>
+          <div class="field"><label for="phone" data-i18n="form.phone">Téléphone</label><input type="tel" id="phone" name="phone" autocomplete="tel"></div>
+          <div class="field field--full"><label for="notes" data-i18n="form.notes">Message (facultatif)</label><textarea id="notes" name="notes" rows="1" data-i18n-ph="form.notes.ph" placeholder="Une précision à nous donner ?"></textarea></div>
+          <div class="preview" aria-live="polite"><small data-i18n="form.preview">Votre message</small><pre id="preview"></pre></div>
+          <p class="error" id="error" role="alert"></p>
+          <div class="actions">
+            <button class="btn" type="submit" id="sendMail" data-i18n="form.mail">Envoyer par e-mail</button>
+            <a class="btn btn--ghost" href="tel:+41244962111" data-i18n="form.call">Appeler la résidence</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__in">
+    <p><b>RÉSIDENCE PANORAMA</b><span>Route du Village, CH-1884 Villars-sur-Ollon</span></p>
+    <p>© 2026 Résidence Panorama</p>
+    <p class="credit">Crafted by Jacob Web Design</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var doc = document, root = doc.documentElement;
+  root.classList.add('js');
+  var $ = function(s, c){ return (c || doc).querySelector(s); };
+  var $$ = function(s, c){ return Array.prototype.slice.call((c || doc).querySelectorAll(s)); };
+
+  var EMAIL = 'info@residencepanoramavillars.com';
+
+  /* ---------- Translations ----------
+     French lives in the markup and is collected at start-up; only English is listed here. */
+  var EN = {
+    'skip':'Skip to content',
+    'nav.res':'The Residence','nav.apt':'Apartments','nav.dom':'The Resort','nav.contact':'Contact','cta':'Inquire Direct',
+    'hero.eyebrow':'Villars-sur-Ollon · Vaud Alps · Switzerland',
+    'hero.title':'Overlooking the Rhône Valley &amp; <span class="nw">Dents-du-Midi.</span>',
+    'hero.sub':'Alpine apartments of character between 1,300 and 2,200 m — from studios to 4-room apartments with panoramic views.',
+    'fact.1':'1,300 – 2,200 m','fact.2':'120 km of slopes','fact.3':'Studios to 4 Rooms','fact.4':'Dents-du-Midi Views',
+    'res.eyebrow':'The Residence','res.title':'An alpine address, facing the panorama.',
+    'res.lead':'In the heart of Villars-sur-Ollon, Résidence Panorama brings together bedrooms, studios and 2- to 4-room apartments, facing the Rhône Valley and the Dents-du-Midi.',
+    'r1.t':'From bedroom to 4 rooms','r1.d':'Five categories, from 12 to 95 m², for one to eight guests.',
+    'r2.t':'Panoramic views','r2.d':'The Rhône Valley and the Dents-du-Midi on the horizon.',
+    'r3.t':'Fully equipped kitchens','r3.d':'From studio to 4 rooms: dishwasher, microwave, coffee machine and toaster.',
+    'r4.t':'Flexible sleeping','r4.d':'Fold-away wall beds and built-in extra beds, to suit the size of your group.',
+    'r5.t':'Between 1,300 and 2,200 m','r5.d':'A mountain village among ski slopes, hiking trails and golf.',
+    'r6.t':'Direct booking','r6.d':'Your inquiry goes straight to the residence, with no platform fees.',
+    'apt.eyebrow':'Apartments','apt.title':'Five ways to live the mountain.',
+    'apt.lead':'From a bedroom for a short stay to a 4-room family apartment — choose your category, then check availability directly with the residence.',
+    'tab.chambre':'Bedrooms','tab.studio':'Studios (1 Room)','tab.2p':'2 Rooms','tab.3p':'3 Rooms','tab.4p':'4 Rooms',
+    'apt.check':'Check Availability','apt.note':'Layouts may vary from one apartment to another.',
+    'k.cap':'Guests','k.surface':'Size','k.beds':'Beds','k.bath':'Bath','k.equip':'Amenities','k.view':'View','k.living':'Living','k.extra':'Extra beds',
+    'k.bedroom':'Bedroom','k.bedrooms':'Bedrooms','k.kitchen':'Kitchen','k.outside':'Outdoor',
+    'chambre.h':'Ideal for short alpine stays.','chambre.p':'Single and double bedrooms, calm and simple, for a stopover in Villars.',
+    'chambre.1':'1 to 2 guests','chambre.2':'Single room 12 m² · double room 15 m²','chambre.3':'1 single bed, or 2 single beds',
+    'chambre.4':'Bathroom with shower and WC','chambre.5':'Cable television, free WiFi, kettle','chambre.6':'North-facing, no balcony',
+    'studio.h':'A bright living & sleeping space with mountain outlook.','studio.p':'Living and sleeping in one light-filled room, with an open kitchen.',
+    'studio.1':'2 to 4 guests','studio.2':'Living room with fully equipped open kitchen','studio.3':'Large fold-away wall bed for 2',
+    'studio.4':'Two optional fold-away single beds, built into the entrance hall','studio.5':'Bathroom with WC','studio.6':'Mountain outlook',
+    '2p.h':'Separate bedroom, living area & kitchen.','2p.p':'A separate bedroom, a living room with open kitchen and two bathrooms.',
+    '2p.1':'4 to 6 guests','2p.2':'Separate bedroom for 2, with shower room and WC','2p.3':'Living room with fully equipped open kitchen',
+    '2p.4':'Large fold-away wall bed in the living room, for 2','2p.5':'Second bathroom with WC','2p.6':'Two optional fold-away single beds, built into the entrance hall',
+    '3p.h':'A spacious family layout with balcony.','3p.p':'Two separate bedrooms and a generous living room, designed for family life.',
+    '3p.1':'6 to 8 guests','3p.2':'2 separate bedrooms — large double bed, bunk beds','3p.3':'Large fold-away wall bed in the living room, for 2',
+    '3p.4':'Fully equipped open kitchen','3p.5':'Bathroom with bathtub and WC, plus a separate WC','3p.6':'Balcony',
+    '4p.h':'A large residence overlooking the Rhône Valley.','4p.p':'Three separate bedrooms and two bathrooms, for stays with family and friends.',
+    '4p.1':'6 to 8 guests','4p.2':'3 separate bedrooms — large double bed, 2 twin beds, 2 bunk beds','4p.3':'Fully equipped open kitchen',
+    '4p.4':'Two bathrooms — bath and WC, shower and WC','4p.5':'Two optional fold-away single beds, built into the entrance hall','4p.6':'Overlooking the Rhône Valley',
+    'dom.eyebrow':'The Resort','dom.title':'Villars, winter and summer.','season.winter':'Winter','season.summer':'Summer',
+    'winter.cap':'of ski slopes, between 1,300 and 2,200 m.',
+    'winter.1':'120 km of ski slopes','winter.2':'45 ski lifts','winter.3':'A ski area between 1,300 and 2,200 m','winter.4':'Heated pools',
+    'summer.cap':'of marked hiking trails, between 1,300 and 2,200 m.',
+    'summer.1':'300 km of marked hiking trails','summer.2':'18-hole golf course','summer.3':'Mountain biking and paragliding','summer.4':'Heated pools',
+    'stat.1':'Ski slopes','stat.2':'Ski lifts','stat.3':'Marked trails','stat.4':'Golf holes',
+    'inq.eyebrow':'Direct Booking · No Platform Fees','inq.title1':'Book direct —','inq.title2':'no platform fees',
+    'inq.lead':'Send your inquiry to the residence. No intermediary, no commission — a direct reply with your rate.',
+    'inq.email':'Email','inq.phone1':'Phone 1','inq.phone2':'Phone 2','inq.addr':'Address',
+    'inq.addr.v':'Route du Village, Case postale 184, CH-1884 Villars-sur-Ollon, Switzerland',
+    'form.type':'Apartment type','opt.chambre':'Bedroom','opt.studio':'Studio (1 room)','opt.2p':'2 rooms','opt.3p':'3 rooms','opt.4p':'4 rooms',
+    'form.in':'Arrival','form.out':'Departure','form.guests':'Guests','form.name':'Name','form.email':'Email','form.phone':'Phone',
+    'form.notes':'Message (optional)','form.notes.ph':'Anything we should know?','form.preview':'Your message',
+    'form.mail':'Send by Email','form.call':'Call the residence'
+  };
+  // Strings that only exist in script (generated message, errors, document title).
+  var MSG = {
+    fr: { title:'Résidence Panorama — Appartements alpins à Villars-sur-Ollon', sep:' : ',
+      hello:'Bonjour,', ask:'Je souhaite recevoir un tarif pour un séjour à la Résidence Panorama.',
+      type:'Type', 'in':'Arrivée', out:'Départ', nights:'Nuits', guests:'Personnes', name:'Nom', email:'E-mail', phone:'Téléphone', notes:'Message',
+      thanks:'Merci.', subject:'Résidence Panorama — Demande de tarif',
+      'err.dates':'Veuillez choisir vos dates d’arrivée et de départ.', 'err.order':'Le départ doit être postérieur à l’arrivée.', 'err.name':'Veuillez indiquer votre nom.' },
+    en: { title:'Résidence Panorama — Alpine apartments in Villars-sur-Ollon', sep:': ',
+      hello:'Hello,', ask:'I would like to receive a rate for a stay at Résidence Panorama.',
+      type:'Type', 'in':'Arrival', out:'Departure', nights:'Nights', guests:'Guests', name:'Name', email:'Email', phone:'Phone', notes:'Message',
+      thanks:'Thank you.', subject:'Résidence Panorama — Rate inquiry',
+      'err.dates':'Please choose your arrival and departure dates.', 'err.order':'Departure must be after arrival.', 'err.name':'Please enter your name.' }
+  };
+  var LOCALE = { fr:'fr-CH', en:'en-GB' };
+  var FR = {}, lang = 'fr';
+  // Only the headline carries markup (no-wrap spans); it is our own static text.
+  function isHtml(el){ return el.hasAttribute('data-i18n-html'); }
+  $$('[data-i18n]').forEach(function(el){ FR[el.getAttribute('data-i18n')] = isHtml(el) ? el.innerHTML : el.textContent; });
+  $$('[data-i18n-ph]').forEach(function(el){ FR[el.getAttribute('data-i18n-ph')] = el.placeholder; });
+  function t(k){ return (lang === 'en' && EN[k]) || FR[k] || k; }
+  function m(k){ return MSG[lang][k]; }
+
+  function applyLang(){
+    root.lang = lang;
+    doc.title = m('title');
+    $$('[data-i18n]').forEach(function(el){
+      var v = t(el.getAttribute('data-i18n'));
+      if(isHtml(el)) el.innerHTML = v; else el.textContent = v;
+    });
+    $$('[data-i18n-ph]').forEach(function(el){ el.placeholder = t(el.getAttribute('data-i18n-ph')); });
+    $$('.lang button').forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.lang === lang)); });
+    showError(errKey);
+    render();
+  }
+  var swapTimer;
+  function setLang(next, instant){
+    if(!MSG[next] || next === lang) return;
+    lang = next;
+    try{ localStorage.setItem('residence-panorama-lang', lang); }catch(e){}
+    clearTimeout(swapTimer);
+    if(instant){ applyLang(); return; }
+    doc.body.classList.add('lang-swap');
+    swapTimer = setTimeout(function(){ applyLang(); doc.body.classList.remove('lang-swap'); }, 200);
+  }
+  $$('.lang button').forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.lang); }); });
+
+  /* ---------- Header & mobile menu ---------- */
+  var header = $('#header'), burger = $('#burger'), drawer = $('#drawer');
+  function onScroll(){ header.classList.toggle('is-scrolled', window.scrollY > 24); }
+  window.addEventListener('scroll', onScroll, { passive:true }); onScroll();
+  function setMenu(open){
+    drawer.classList.toggle('is-open', open);
+    burger.setAttribute('aria-expanded', String(open));
+  }
+  burger.addEventListener('click', function(){ setMenu(burger.getAttribute('aria-expanded') !== 'true'); });
+  drawer.addEventListener('click', function(e){ if(e.target.closest('a')) setMenu(false); });
+  doc.addEventListener('keydown', function(e){ if(e.key === 'Escape') setMenu(false); });
+
+  /* ---------- Tabs (apartments & seasons) ---------- */
+  $$('[data-tabs]').forEach(function(list){
+    var tabs = $$('[role="tab"]', list);
+    function select(tab, focus){
+      tabs.forEach(function(x){
+        var on = x === tab;
+        x.setAttribute('aria-selected', String(on));
+        x.tabIndex = on ? 0 : -1;
+        $('#' + x.getAttribute('aria-controls')).hidden = !on;
+      });
+      if(tab.dataset.season){
+        list.dataset.active = tab.dataset.season;
+        $$('[data-season-img]').forEach(function(img){ img.classList.toggle('is-on', img.dataset.seasonImg === tab.dataset.season); });
+      }
+      if(focus) tab.focus();
+    }
+    tabs.forEach(function(tab, i){
+      tab.addEventListener('click', function(){ select(tab); });
+      tab.addEventListener('keydown', function(e){
+        var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if(!d) return;
+        e.preventDefault();
+        select(tabs[(i + d + tabs.length) % tabs.length], true);
+      });
+    });
+  });
+
+  /* ---------- Inquiry form ---------- */
+  var fType = $('#type'), fIn = $('#in'), fOut = $('#out'), fGuests = $('#guests'), fName = $('#name'), fEmail = $('#email'), fPhone = $('#phone'), fNotes = $('#notes');
+  var preview = $('#preview'), errorEl = $('#error'), errKey = '';
+  function iso(d){ return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); }
+  function parse(v){ var p = v.split('-'); return p.length === 3 ? new Date(+p[0], +p[1] - 1, +p[2]) : null; }
+  function fmt(v){
+    var d = parse(v); if(!d) return '—';
+    return new Intl.DateTimeFormat(LOCALE[lang], { weekday:'short', day:'numeric', month:'long', year:'numeric' }).format(d);
+  }
+  function nights(){
+    var a = parse(fIn.value), b = parse(fOut.value);
+    return a && b ? Math.round((b - a) / 864e5) : 0;
+  }
+  function typeLabel(){ return t('opt.' + fType.value); }
+  function message(){
+    var c = m('sep'), n = nights(), lines = [m('hello'), m('ask'), '',
+      m('type') + c + typeLabel(),
+      m('in') + c + fmt(fIn.value),
+      m('out') + c + fmt(fOut.value)];
+    if(n > 0) lines.push(m('nights') + c + n);
+    lines.push(m('guests') + c + fGuests.value);
+    [['name', fName], ['email', fEmail], ['phone', fPhone], ['notes', fNotes]].forEach(function(p){
+      var v = p[1].value.trim();
+      if(v) lines.push(m(p[0]) + c + v);
+    });
+    lines.push('', m('thanks'));
+    return lines.join('\n');
+  }
+  function validate(){
+    if(!fIn.value || !fOut.value) return 'err.dates';
+    if(nights() < 1) return 'err.order';
+    if(!fName.value.trim()) return 'err.name';
+    return '';
+  }
+  function showError(k){ errKey = k; errorEl.textContent = k ? m(k) : ''; }
+  function render(){ preview.textContent = message(); }
+  function onChange(){
+    if(fIn.value){
+      var next = parse(fIn.value); next.setDate(next.getDate() + 1);
+      fOut.min = iso(next);
+    }
+    if(errKey) showError(validate());
+    render();
+  }
+  fIn.min = iso(new Date());
+  fOut.min = fIn.min;
+  [fType, fIn, fOut, fGuests, fName, fEmail, fPhone, fNotes].forEach(function(el){
+    el.addEventListener('input', onChange);
+    el.addEventListener('change', onChange);
+  });
+  $('#form').addEventListener('submit', function(e){
+    e.preventDefault();
+    var k = validate();
+    showError(k);
+    if(k){ (k === 'err.name' ? fName : !fIn.value ? fIn : fOut).focus(); return; }
+    window.location.href = 'mailto:' + EMAIL +
+      '?subject=' + encodeURIComponent(m('subject') + ' (' + typeLabel() + ')') +
+      '&body=' + encodeURIComponent(message().replace(/\n/g, '\r\n'));
+  });
+
+  // "Check availability" carries the chosen category into the form.
+  $$('[data-pick]').forEach(function(b){
+    b.addEventListener('click', function(){
+      fType.value = b.dataset.pick;
+      onChange();
+      $('#contact').scrollIntoView();
+      fIn.focus({ preventScroll:true });
+    });
+  });
+
+  /* ---------- Scroll reveal & current nav link ---------- */
+  var reveals = $$('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(!en.isIntersecting) return;
+        en.target.classList.add('is-in');
+        io.unobserve(en.target);
+      });
+    }, { rootMargin:'0px 0px -8% 0px', threshold:.08 });
+    reveals.forEach(function(el){ io.observe(el); });
+    // Stagger features that share a row.
+    $$('.feat').forEach(function(el, i){ el.style.setProperty('--d', (i % 2) * .12 + 's'); });
+
+    var links = $$('.nav a');
+    var spy = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(!en.isIntersecting) return;
+        links.forEach(function(a){ a.classList.toggle('is-current', a.getAttribute('href') === '#' + en.target.id); });
+      });
+    }, { rootMargin:'-45% 0px -50% 0px' });
+    $$('main section[id]').forEach(function(s){ spy.observe(s); });
+  } else {
+    reveals.forEach(function(el){ el.classList.add('is-in'); });
+  }
+
+  /* ---------- Init ---------- */
+  var saved = null;
+  try{ saved = localStorage.getItem('residence-panorama-lang'); }catch(e){}
+  if(saved === 'en') setLang('en', true); else render();
+})();
+</script>
+</body>
+</html>
