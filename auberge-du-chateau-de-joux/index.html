@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Auberge du Château de Joux — Hôtel, Restaurant & Glacier à La Cluse-et-Mijoux</title>
+<meta name="description" content="Hôtel de charme, restaurant de terroir et glacier artisanal au pied du Château de Joux, sur la route de Lausanne. Ouvert tous les jours de 8h00 à 22h00. Réservation en direct.">
+<meta name="theme-color" content="#F7F5F0">
+<meta property="og:title" content="Auberge du Château de Joux — La Cluse-et-Mijoux · Jura">
+<meta property="og:description" content="Au pied du Château de Joux, une halte authentique sur la route de Lausanne.">
+<meta property="og:image" content="https://static.wixstatic.com/media/868235_03ea15cd56b3430b9d40d484267b08af~mv2.jpeg/v1/fill/w_1200,h_630,al_c,q_82/868235_03ea15cd56b3430b9d40d484267b08af~mv2.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://static.wixstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --limestone:#F7F5F0;
+  --snow:#FFFFFF;
+  --ink:#181A1D;
+  --stone:#6B6F75;
+  --bronze:#9E7B4F;
+  --hair:rgba(24,26,29,.08);
+  --serif:"Cormorant Garamond","Times New Roman",serif;
+  --sans:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --header-h:76px;
+  --pad:clamp(20px,5vw,64px);
+  --section:clamp(88px,12vw,168px);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--header-h);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--limestone);color:var(--ink);font-family:var(--sans);font-size:16px;font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:0;padding:0;cursor:pointer}
+ul{list-style:none;margin:0;padding:0}
+h1,h2,h3,p{margin:0}
+[hidden]{display:none!important}
+.nw{white-space:nowrap}
+:focus-visible{outline:1px solid var(--bronze);outline-offset:4px}
+.wrap{width:100%;max-width:1320px;margin:0 auto;padding:0 var(--pad)}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:10px 16px;z-index:100;font-size:13px}
+.skip:focus{left:8px}
+
+/* Type */
+.eyebrow{font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--bronze)}
+.display{font-family:var(--serif);font-weight:300;font-size:clamp(2.25rem,5vw,4rem);line-height:1.06;letter-spacing:-.01em}
+.lead{color:var(--stone);font-size:clamp(1rem,1.25vw,1.125rem);max-width:54ch}
+[data-i18n]{transition:opacity .22s ease}
+.lang-swap [data-i18n]{opacity:0}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:46px;padding:0 26px;border-radius:999px;background:var(--ink);color:#fff;font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;border:1px solid var(--ink);transition:background .35s var(--ease),color .35s var(--ease),border-color .35s var(--ease)}
+.btn:hover{background:transparent;color:var(--ink)}
+.btn--ghost{background:transparent;color:var(--ink);border-color:rgba(24,26,29,.22)}
+.btn--ghost:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.link{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding-bottom:6px;border-bottom:1px solid var(--bronze);transition:gap .35s var(--ease),color .35s}
+.link:hover{gap:16px;color:var(--bronze)}
+
+/* Header */
+.header{position:fixed;inset:0 0 auto 0;z-index:50;height:var(--header-h);background:rgba(247,245,240,.66);-webkit-backdrop-filter:blur(16px) saturate(160%);backdrop-filter:blur(16px) saturate(160%);border-bottom:1px solid var(--hair);transition:background .4s ease}
+.header.is-scrolled{background:rgba(247,245,240,.82)}
+.header__in{height:100%;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px}
+.brand{display:inline-flex;flex-direction:column;gap:5px;justify-self:start;line-height:1}
+.brand b{font-family:var(--serif);font-weight:500;font-size:19px;letter-spacing:.3em}
+.brand span{font-size:8.5px;font-weight:500;letter-spacing:.28em;color:var(--stone)}
+.nav{display:flex;gap:clamp(20px,3vw,44px)}
+.nav a{position:relative;font-size:12px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;padding:8px 0;white-space:nowrap}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:1px;background:var(--bronze);transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease)}
+.nav a:hover::after,.nav a.is-current::after{transform:scaleX(1)}
+.header__end{display:flex;align-items:center;gap:22px;justify-self:end}
+.lang{display:flex;align-items:center;gap:2px}
+.lang button{font-size:11px;font-weight:500;letter-spacing:.14em;color:var(--stone);padding:8px 6px;transition:color .3s}
+.lang button + button{position:relative;margin-left:6px}
+.lang button + button::before{content:"";position:absolute;left:-4px;top:50%;width:1px;height:10px;margin-top:-5px;background:rgba(24,26,29,.16)}
+.lang button:hover,.lang button[aria-pressed="true"]{color:var(--ink)}
+.lang button[aria-pressed="true"]{text-decoration:underline;text-decoration-color:var(--bronze);text-underline-offset:6px}
+.header .btn{min-height:40px;padding:0 20px;font-size:11px}
+.burger{display:none;width:40px;height:40px;position:relative}
+.burger i{position:absolute;left:10px;right:10px;height:1px;background:var(--ink);transition:transform .4s var(--ease),top .4s var(--ease)}
+.burger i:first-child{top:16px}.burger i:last-child{top:23px}
+.burger[aria-expanded="true"] i:first-child{top:20px;transform:rotate(45deg)}
+.burger[aria-expanded="true"] i:last-child{top:20px;transform:rotate(-45deg)}
+.drawer{display:none}
+
+/* Hero */
+.hero{position:relative;height:100vh;height:100svh;min-height:540px;color:#fff;overflow:hidden;display:flex;align-items:flex-end;background:#2a2d31}
+.hero__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:38% 50%;animation:heroZoom 2.4s var(--ease) both}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(24,26,29,.9) 0%,rgba(24,26,29,.72) 30%,rgba(24,26,29,.44) 56%,rgba(24,26,29,.1) 80%,rgba(24,26,29,0) 100%)}
+.hero__in{position:relative;z-index:1;padding-bottom:clamp(20px,3.2vw,40px)}
+.hero .eyebrow{color:#E4D3BC}
+.hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(2.2rem,5.6vw,5rem);line-height:1.02;letter-spacing:-.012em;max-width:20ch;margin:18px 0 22px;text-wrap:balance;text-shadow:0 1px 30px rgba(24,26,29,.25)}
+.hero__sub{max-width:56ch;font-size:clamp(.94rem,1.2vw,1.0625rem);color:rgba(255,255,255,.84)}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);margin-top:clamp(28px,5vw,60px);border-top:1px solid rgba(255,255,255,.24)}
+.facts li{padding:18px 20px 0 0;font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.92)}
+.facts li + li{padding-left:20px;border-left:1px solid rgba(255,255,255,.16)}
+.hero__in > *{animation:rise 1.2s var(--ease) both}
+.hero__in > :nth-child(2){animation-delay:.12s}
+.hero__in > :nth-child(3){animation-delay:.24s}
+.hero__in > :nth-child(4){animation-delay:.38s}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes heroZoom{from{transform:scale(1.06)}to{transform:none}}
+
+/* Sections */
+section{padding:var(--section) 0}
+.snow{background:var(--snow);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+.head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px clamp(32px,6vw,96px);align-items:end;margin-bottom:clamp(44px,7vw,88px)}
+.head .display{margin-top:18px}
+.head .lead{justify-self:end}
+
+/* Chalet grid */
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(32px,6vw,96px);border-bottom:1px solid var(--hair)}
+.feat{display:grid;grid-template-columns:44px 1fr;align-content:start;gap:4px 12px;padding:30px 0;border-top:1px solid var(--hair)}
+.feat__n{font-size:11px;font-weight:500;letter-spacing:.16em;color:var(--bronze);padding-top:10px}
+.feat h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.4rem,2vw,1.7rem);line-height:1.2}
+.feat p{grid-column:2;color:var(--stone);font-size:.94rem;max-width:44ch}
+
+/* Tabs */
+.tabs{display:flex;gap:clamp(22px,4vw,52px);border-bottom:1px solid var(--hair);overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{position:relative;padding:18px 0;font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--stone);white-space:nowrap;transition:color .3s}
+.tabs button::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.tabs button[aria-selected="true"]{color:var(--ink)}
+.tabs button[aria-selected="true"]::after{transform:scaleX(1)}
+.floor{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:32px clamp(32px,6vw,96px);padding-top:clamp(40px,6vw,72px)}
+[role="tabpanel"]:not([hidden]){animation:panel .7s var(--ease) both}
+@keyframes panel{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.floor__n{font-family:var(--serif);font-weight:300;font-size:clamp(4.5rem,10vw,8.5rem);line-height:.82;color:var(--bronze);opacity:.55}
+.floor h3{font-family:var(--serif);font-weight:300;font-size:clamp(1.8rem,3.2vw,2.75rem);line-height:1.1;margin:22px 0 14px}
+.floor p{color:var(--stone);max-width:42ch}
+.rooms li{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:20px 0;border-top:1px solid var(--hair);font-family:var(--serif);font-size:clamp(1.2rem,1.9vw,1.5rem);line-height:1.3}
+.rooms li:last-child{border-bottom:1px solid var(--hair)}
+.rooms small{flex:none;font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.16em;color:var(--bronze)}
+
+/* Seasons */
+.season-head{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;flex-wrap:wrap;margin-bottom:clamp(40px,6vw,72px)}
+.season-head .display{margin-top:18px}
+.pill{position:relative;display:inline-grid;grid-template-columns:1fr 1fr;padding:4px;border:1px solid var(--hair);border-radius:999px;background:var(--limestone)}
+.pill::before{content:"";position:absolute;top:4px;bottom:4px;left:4px;width:calc(50% - 4px);border-radius:999px;background:var(--ink);transition:transform .55s var(--ease)}
+.pill[data-active="summer"]::before{transform:translateX(100%)}
+.pill button{position:relative;min-width:116px;padding:11px 22px;font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--stone);transition:color .4s}
+.pill button[aria-selected="true"]{color:#fff}
+.season{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:32px clamp(32px,6vw,96px);align-items:center}
+.season__media{position:relative;aspect-ratio:5/4;overflow:hidden;background:#e9e7e2}
+.season__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.04);transition:opacity 1s var(--ease),transform 1.6s var(--ease)}
+.season__media img.is-on{opacity:1;transform:none}
+.season__big{font-family:var(--serif);font-weight:300;font-size:clamp(4rem,9vw,7.5rem);line-height:.9;letter-spacing:-.02em}
+.season__big sup{font-size:.32em;letter-spacing:.04em;color:var(--bronze);vertical-align:top;position:relative;top:.5em;margin-left:.3em}
+.season__cap{margin:14px 0 30px;color:var(--stone);max-width:36ch}
+.ticks li{padding:15px 0;border-top:1px solid var(--hair);font-size:.95rem;display:flex;gap:16px}
+.ticks li:last-child{border-bottom:1px solid var(--hair)}
+.ticks li::before{content:"";flex:none;width:14px;height:1px;background:var(--bronze);margin-top:.85em}
+
+/* Location */
+.loc{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px clamp(32px,6vw,96px)}
+.loc .display{margin:18px 0 26px}
+.loc .lead{margin-bottom:34px}
+.dl{margin:0;border-bottom:1px solid var(--hair);align-self:end}
+.dl div{display:grid;grid-template-columns:minmax(96px,1fr) 2.4fr;gap:16px;padding:22px 0;border-top:1px solid var(--hair);align-items:baseline}
+.dl dt{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--stone)}
+.dl dd{margin:0;font-family:var(--serif);font-size:clamp(1.2rem,1.9vw,1.5rem);line-height:1.3}
+
+/* Inquiry */
+.card{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);background:var(--limestone);border:1px solid var(--hair)}
+.card__a{padding:clamp(28px,5vw,64px);border-right:1px solid var(--hair);display:flex;flex-direction:column}
+.card__a .display{font-size:clamp(2rem,3.8vw,3.25rem);margin:18px 0 20px}
+.card__a .display em{font-style:italic;color:var(--bronze)}
+.seasons-tag{display:inline-block;margin-top:26px;padding:8px 16px;border:1px solid rgba(158,123,79,.4);border-radius:999px;font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--bronze);align-self:flex-start}
+.contact{margin-top:auto;padding-top:40px}
+.contact a{display:block;padding:18px 0;border-top:1px solid var(--hair);transition:color .3s}
+.contact a:last-child{border-bottom:1px solid var(--hair)}
+.contact a:hover{color:var(--bronze)}
+.contact small{display:block;font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--stone);margin-bottom:4px}
+.contact span{font-family:var(--serif);font-size:clamp(1.15rem,1.8vw,1.45rem);word-break:break-word}
+.form{padding:clamp(28px,5vw,64px);background:var(--snow);display:grid;grid-template-columns:1fr 1fr;gap:26px 28px;align-content:start}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field--full{grid-column:1/-1}
+.field label,.preview small{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--stone)}
+.field input,.field select,.field textarea{width:100%;min-width:0;height:46px;padding:0;background:transparent;border:0;border-bottom:1px solid rgba(24,26,29,.18);border-radius:0;font-size:16px;font-weight:300;outline:none;transition:border-color .3s;-webkit-appearance:none;appearance:none}
+.field textarea{height:auto;min-height:46px;padding:11px 0;resize:vertical;line-height:1.5}
+.field select{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%236B6F75'/%3E%3C/svg%3E") no-repeat right 2px center}
+.field input:focus,.field select:focus,.field textarea:focus{border-bottom-color:var(--bronze)}
+.field ::placeholder{color:#a9acb0}
+.preview{grid-column:1/-1;border:1px solid var(--hair);background:var(--limestone);padding:20px 22px}
+.preview pre{margin:10px 0 0;font-family:var(--sans);font-size:.875rem;line-height:1.75;white-space:pre-wrap;word-break:break-word;color:var(--ink)}
+.actions{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:12px}
+.actions .btn{flex:1 1 200px}
+.error{grid-column:1/-1;min-height:1.4em;margin-top:-10px;font-size:.84rem;color:#9a4b3c}
+
+/* Footer */
+.footer{padding:44px 0 calc(44px + env(safe-area-inset-bottom));font-size:12px;color:var(--stone);letter-spacing:.04em}
+.footer__in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 32px;align-items:baseline}
+.footer b{font-family:var(--serif);font-weight:500;font-size:15px;letter-spacing:.26em;color:var(--ink);margin-right:14px}
+.footer .credit{font-size:11px;opacity:.75}
+
+/* Scroll reveal (only when JS is running) */
+.js .reveal{opacity:0;transform:translateY(26px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease);transition-delay:var(--d,0s)}
+.js .reveal.is-in{opacity:1;transform:none}
+
+@media (max-width:1080px){
+  .nav,.header .btn{display:none}
+  .header__in{grid-template-columns:1fr auto}
+  .header__end{gap:10px}
+  .burger{display:block}
+  .drawer{display:block;position:fixed;inset:var(--header-h) 0 auto 0;z-index:49;padding:10px var(--pad) 30px;background:rgba(247,245,240,.9);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom:1px solid var(--hair);opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .4s var(--ease),transform .4s var(--ease),visibility .4s}
+  .drawer.is-open{opacity:1;visibility:visible;transform:none}
+  .drawer a:not(.btn){display:block;padding:17px 0;border-bottom:1px solid var(--hair);font-family:var(--serif);font-size:1.6rem;font-weight:300}
+  .drawer .btn{margin-top:26px;width:100%}
+}
+@media (max-width:860px){
+  :root{--header-h:64px}
+  .brand b{font-size:16px;letter-spacing:.26em}
+  .brand span{font-size:7.5px}
+  .head,.floor,.season,.loc,.card,.grid{grid-template-columns:minmax(0,1fr)}
+  .head .lead{justify-self:start}
+  .card__a{border-right:0;border-bottom:1px solid var(--hair)}
+  .facts{grid-template-columns:1fr 1fr}
+  .facts li{padding:13px 12px 13px 0;font-size:10px;letter-spacing:.16em}
+  .facts li + li{padding-left:0;border-left:0}
+  .facts li:nth-child(even){padding-left:16px;border-left:1px solid rgba(255,255,255,.16)}
+  .facts li:nth-child(n+3){border-top:1px solid rgba(255,255,255,.16)}
+  .hero__in{padding-bottom:calc(10px + env(safe-area-inset-bottom))}
+  .hero h1{margin:14px 0 16px}
+  .pill{width:100%}
+  .pill button{min-width:0}
+  .season__media{aspect-ratio:4/3}
+}
+@media (max-width:480px){
+  .form{grid-template-columns:1fr 1fr;gap:22px 18px}
+  .dl div{grid-template-columns:1fr;gap:4px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .reveal{opacity:1;transform:none}
+}
+
+/* Auberge du Château de Joux */
+.header__in{grid-template-columns:auto 1fr auto}
+.nav{justify-self:center;gap:clamp(18px,2.2vw,32px)}
+.brand{flex-direction:row;align-items:center;gap:16px}
+.brand img{height:30px;width:auto}
+.brand__txt{display:flex;flex-direction:column;gap:5px;padding-left:16px;border-left:1px solid var(--hair)}
+.brand b{font-size:12.5px;letter-spacing:.16em;white-space:nowrap}
+.brand span span{font-size:7px;letter-spacing:.16em;white-space:nowrap}
+/* If the logo fails to load, the text wordmark carries the brand alone. */
+.brand.no-logo img{display:none}
+.brand.no-logo .brand__txt{display:flex!important;padding-left:0;border-left:0}
+.hero{background:#181A1D}
+.hero__img{object-position:50% 100%}
+.hero.is-missing .hero__img{display:none}
+.hero h1{font-size:clamp(1.9rem,3.9vw,3.6rem);max-width:1000px;margin:14px 0 16px}
+.facts{margin-top:clamp(22px,3vw,36px)}
+.hero__sub{text-wrap:pretty}
+
+/* Photo frames: real photographs, with a quiet placeholder if one fails to load */
+.ph{position:relative;margin:0;overflow:hidden;background:linear-gradient(160deg,#ECE8DF,#DDD7CA)}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.6s var(--ease)}
+a.ph:hover img,.pillar:hover .ph img{transform:scale(1.035)}
+.ph.is-missing img{display:none}
+.ph.is-missing::after{content:attr(data-label);position:absolute;inset:0;display:grid;place-items:center;padding:24px;text-align:center;font-family:var(--serif);font-size:1.25rem;font-style:italic;color:var(--stone)}
+
+.pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,44px)}
+.pillar .ph{aspect-ratio:4/5}
+.pillar__n{display:block;margin:26px 0 10px;font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--bronze)}
+.pillar h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.6rem,2.4vw,2.1rem);line-height:1.15}
+.pillar p{margin-top:12px;color:var(--stone);font-size:.95rem}
+.pillar__meta{margin-top:18px;padding-top:16px;border-top:1px solid var(--hair);font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink)}
+
+.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;gap:clamp(12px,1.6vw,22px);margin-top:clamp(64px,9vw,120px)}
+.gallery .ph{height:clamp(240px,32vw,460px)}
+.gallery figcaption,.cap{margin-top:12px;font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--stone)}
+.gallery figure{margin:0}
+
+.duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px clamp(32px,6vw,96px)}
+.duo h3{font-family:var(--serif);font-weight:300;font-size:clamp(1.8rem,3.2vw,2.75rem);line-height:1.1;margin:14px 0 14px}
+.duo p{color:var(--stone);max-width:44ch;margin-bottom:28px}
+.duo .link{margin-top:30px}
+
+.acc{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px clamp(32px,6vw,96px)}
+.acc .display{margin:18px 0 26px}
+.label{display:flex;align-items:center;gap:18px;margin-top:36px;padding-top:28px;border-top:1px solid var(--hair)}
+.label img{width:112px;height:auto;flex:none;border-radius:2px}
+.label p{font-size:.84rem;color:var(--stone);max-width:32ch}
+.acc__list{border-bottom:1px solid var(--hair);align-self:start}
+.acc__list .feat{grid-template-columns:44px 1fr}
+.acc__list .feat p{max-width:52ch}
+
+.contact div{padding:18px 0;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+.contact a:last-of-type{border-bottom:0}
+.actions a.btn{flex:1 1 200px}
+.footer__in{align-items:center}
+.footer img{height:26px;width:auto;display:inline-block;vertical-align:middle;margin-right:18px}
+.footer p:first-child{display:flex;align-items:center;flex-wrap:wrap;gap:8px 0}
+
+@media (max-width:1380px){.brand__txt{display:none}}
+@media (max-width:860px){
+  .brand img{height:26px}
+  .pillars,.duo,.acc{grid-template-columns:minmax(0,1fr)}
+  .pillar .ph{aspect-ratio:4/3}
+  .gallery{grid-template-columns:1fr 1fr}
+  .gallery figure:first-child{grid-column:1/-1}
+  .gallery .ph{height:auto;aspect-ratio:4/3}
+  .gallery figure:first-child .ph{aspect-ratio:16/10}
+  .hero .eyebrow{font-size:9.5px;letter-spacing:.14em}
+  /* Portrait screens: the photo sits in the upper part and melts into slate behind the text. */
+  .hero__img{height:72%;object-position:40% 50%}
+  .hero::after{background:linear-gradient(to top,#181A1D 0%,#181A1D 28%,rgba(24,26,29,.82) 40%,rgba(24,26,29,.3) 56%,rgba(24,26,29,0) 72%)}
+  .facts li{letter-spacing:.12em}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">Aller au contenu</a>
+
+<header class="header" id="header">
+  <div class="wrap header__in">
+    <a class="brand" href="#top" aria-label="Auberge du Château de Joux">
+      <img src="https://static.wixstatic.com/media/868235_4d8b330abfa340f6b7730016a3a8f851~mv2.png/v1/fit/w_480,h_112,al_c,q_90/868235_4d8b330abfa340f6b7730016a3a8f851~mv2.png" width="129" height="30" alt="Auberge du Château de Joux" onerror="this.parentNode.classList.add('no-logo')">
+      <span class="brand__txt">
+        <b>AUBERGE DU CHÂTEAU DE JOUX</b>
+        <span>LA CLUSE-ET-MIJOUX · JURA · ROUTE DE LAUSANNE</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Navigation">
+      <a href="#auberge" data-i18n="nav.inn">L’Auberge</a>
+      <a href="#table" data-i18n="nav.table">Restaurant &amp; Glacier</a>
+      <a href="#accessibilite" data-i18n="nav.acc">Accessibilité</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="header__end">
+      <div class="lang" role="group" aria-label="Langue / Language">
+        <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn" href="#contact" data-i18n="cta">Réserver</a>
+      <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false" aria-controls="drawer"><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+<div class="drawer" id="drawer">
+  <a href="#auberge" data-i18n="nav.inn">L’Auberge</a>
+  <a href="#table" data-i18n="nav.table">Restaurant &amp; Glacier</a>
+  <a href="#accessibilite" data-i18n="nav.acc">Accessibilité</a>
+  <a href="#contact" data-i18n="nav.contact">Contact</a>
+  <a class="btn" href="#contact" data-i18n="cta">Réserver</a>
+</div>
+
+<main id="main">
+  <!-- Hero -->
+  <div class="hero" id="top">
+    <img class="hero__img" data-i18n-alt="alt.hero" alt="L’Auberge du Château de Joux et sa terrasse, le château sur la crête"
+      src="https://static.wixstatic.com/media/868235_03ea15cd56b3430b9d40d484267b08af~mv2.jpeg/v1/fill/w_2048,h_1536,al_c,q_82/868235_03ea15cd56b3430b9d40d484267b08af~mv2.jpeg"
+      srcset="https://static.wixstatic.com/media/868235_03ea15cd56b3430b9d40d484267b08af~mv2.jpeg/v1/fill/w_1200,h_900,al_c,q_82/868235_03ea15cd56b3430b9d40d484267b08af~mv2.jpeg 1200w, https://static.wixstatic.com/media/868235_03ea15cd56b3430b9d40d484267b08af~mv2.jpeg/v1/fill/w_1600,h_1200,al_c,q_82/868235_03ea15cd56b3430b9d40d484267b08af~mv2.jpeg 1600w, https://static.wixstatic.com/media/868235_03ea15cd56b3430b9d40d484267b08af~mv2.jpeg/v1/fill/w_2048,h_1536,al_c,q_82/868235_03ea15cd56b3430b9d40d484267b08af~mv2.jpeg 2048w"
+      sizes="100vw" fetchpriority="high" decoding="async" onerror="this.parentNode.classList.add('is-missing')">
+    <div class="wrap hero__in">
+      <p class="eyebrow" data-i18n="hero.eyebrow">Hôtel · Restaurant · Glacier — La Cluse-et-Mijoux</p>
+      <h1 data-i18n="hero.title" data-i18n-html>Au pied du <span class="nw">Château de Joux,</span> une halte authentique sur la <span class="nw">route de Lausanne.</span></h1>
+      <p class="hero__sub" data-i18n="hero.sub">Hôtel de charme, restaurant de terroir et glacier artisanal — ouvert tous les jours de 8h00 à 22h00.</p>
+      <ul class="facts">
+        <li data-i18n="fact.1">Ouvert 7j/7 · 8h – 22h</li>
+        <li data-i18n="fact.2">Hôtel · Restaurant · Glacier</li>
+        <li data-i18n="fact.3">Accès PMR Complet</li>
+        <li data-i18n="fact.4">Face au Château de Joux</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- L'Auberge -->
+  <section id="auberge">
+    <div class="wrap">
+      <div class="head reveal">
+        <div>
+          <p class="eyebrow" data-i18n="inn.eyebrow">L’Auberge</p>
+          <h2 class="display" data-i18n="inn.title">Trois maisons en une, face au château.</h2>
+        </div>
+        <p class="lead" data-i18n="inn.lead">Rénovée en 2016, l’auberge vous accueille en toute convivialité, avec une vue imprenable sur le Château de Joux et les forêts de sapins — à 860 m d’altitude, dans le Haut-Doubs, à 15 minutes de la Suisse.</p>
+      </div>
+      <div class="pillars">
+        <article class="pillar reveal">
+          <figure class="ph" data-label="L’Hôtel"><img loading="lazy" decoding="async" src="https://static.wixstatic.com/media/868235_20b71fb9de1c44e1871efa7e9013a938~mv2.jpg/v1/fill/w_900,h_1125,al_c,q_82/868235_20b71fb9de1c44e1871efa7e9013a938~mv2.jpg" data-i18n-alt="alt.room" alt="Chambre de l’auberge, lit double et papier peint végétal" onerror="this.parentNode.classList.add('is-missing')"></figure>
+          <span class="pillar__n">01</span>
+          <h3 data-i18n="p1.t">L’Hôtel</h3>
+          <p data-i18n="p1.d">Des chambres paisibles à la montagne, sur la frontière franco-suisse (axe Pontarlier – Lausanne), dont une chambre de plain-pied aménagée PMR.</p>
+          <p class="pillar__meta" data-i18n="p1.m">15 chambres · 15 à 30 m² · 2 à 4 personnes</p>
+        </article>
+        <article class="pillar reveal" style="--d:.12s">
+          <figure class="ph" data-label="Le Restaurant"><img loading="lazy" decoding="async" src="https://static.wixstatic.com/media/868235_411c807c52334bab8b2f98e2ddb65ece~mv2_d_3264_2448_s_4_2.jpg/v1/fill/w_900,h_1125,al_c,q_82/868235_411c807c52334bab8b2f98e2ddb65ece~mv2_d_3264_2448_s_4_2.jpg" data-i18n-alt="alt.facade" alt="Façade de l’Auberge du Château de Joux" onerror="this.parentNode.classList.add('is-missing')"></figure>
+          <span class="pillar__n">02</span>
+          <h3 data-i18n="p2.t">Le Restaurant</h3>
+          <p data-i18n="p2.d">Une cuisine de saison du Jura et de Franche-Comté, servie chaque jour du matin au soir, avec un accès de plain-pied à la salle.</p>
+          <p class="pillar__meta" data-i18n="p2.m">60 couverts · deux salles &amp; véranda</p>
+        </article>
+        <article class="pillar reveal" style="--d:.24s">
+          <figure class="ph" data-label="Le Glacier"><img loading="lazy" decoding="async" src="https://static.wixstatic.com/media/868235_a7fc167c191e455aa5511b33dded90f3~mv2_d_3264_1836_s_2.jpg/v1/fill/w_900,h_1125,al_c,q_82/868235_a7fc167c191e455aa5511b33dded90f3~mv2_d_3264_1836_s_2.jpg" data-i18n-alt="alt.terrace" alt="Terrasse de l’auberge, tables dressées au soleil" onerror="this.parentNode.classList.add('is-missing')"></figure>
+          <span class="pillar__n">03</span>
+          <h3 data-i18n="p3.t">Le Glacier</h3>
+          <p data-i18n="p3.d">Glaces et sorbets artisanaux, servis en terrasse après la visite du Château de Joux.</p>
+          <p class="pillar__meta" data-i18n="p3.m">Terrasse en bois · plein sud</p>
+        </article>
+      </div>
+      <div class="gallery reveal">
+        <figure><div class="ph" data-label="L’Auberge"><img loading="lazy" decoding="async" src="https://static.wixstatic.com/media/868235_7e23b7788bc84461b91dc9d8b6667a1f~mv2.jpeg/v1/fill/w_1400,h_900,al_c,q_82/868235_7e23b7788bc84461b91dc9d8b6667a1f~mv2.jpeg" data-i18n-alt="alt.aerial" alt="L’auberge et le village vus du ciel, sous le Château de Joux" onerror="this.parentNode.classList.add('is-missing')"></div><figcaption data-i18n="g.1">L’auberge, au pied du château</figcaption></figure>
+        <figure><div class="ph" data-label="Château de Joux"><img loading="lazy" decoding="async" src="https://static.wixstatic.com/media/868235_6f83bcbfe2264aceaa257058b1bffde9~mv2_d_3888_2592_s_4_2.jpg/v1/fill/w_1200,h_800,al_c,q_82/868235_6f83bcbfe2264aceaa257058b1bffde9~mv2_d_3888_2592_s_4_2.jpg" style="object-position:70% 50%" data-i18n-alt="alt.castle" alt="Le Château de Joux sur son éperon rocheux" onerror="this.parentNode.classList.add('is-missing')"></div><figcaption data-i18n="g.2">Le Château de Joux</figcaption></figure>
+        <figure><div class="ph" data-label="Chambre"><img loading="lazy" decoding="async" src="https://static.wixstatic.com/media/868235_20ca5d406e3749c7a35fbe2795523f02~mv2.jpg/v1/fill/w_800,h_1000,al_c,q_82/868235_20ca5d406e3749c7a35fbe2795523f02~mv2.jpg" data-i18n-alt="alt.room2" alt="Chambre à plusieurs lits" onerror="this.parentNode.classList.add('is-missing')"></div><figcaption data-i18n="g.3">Chambres de 2 à 4 personnes</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Restaurant & Glacier -->
+  <section id="table" class="snow">
+    <div class="wrap">
+      <div class="head reveal">
+        <div>
+          <p class="eyebrow" data-i18n="table.eyebrow">Restaurant &amp; Glacier</p>
+          <h2 class="display" data-i18n="table.title">Le terroir comtois, du matin au soir.</h2>
+        </div>
+        <p class="lead" data-i18n="table.lead">Une cuisine traditionnelle, élaborée avec de nombreux produits régionaux — et, pour finir, une glace artisanale en terrasse, face au château.</p>
+      </div>
+      <div class="duo">
+        <div class="reveal">
+          <p class="eyebrow">02</p>
+          <h3 data-i18n="rest.h">Le Restaurant</h3>
+          <p data-i18n="rest.p">Deux salles et une véranda, pour 60 couverts, ouvertes tous les jours.</p>
+          <ul class="ticks">
+            <li data-i18n="rest.1">Saucisse de Morteau, Mont d’Or, Comté</li>
+            <li data-i18n="rest.2">Spécialités : « le coin des Morilles » et les filets de perche meunière</li>
+            <li data-i18n="rest.3">Buffet de desserts faits maison</li>
+            <li data-i18n="rest.4">Accès de plain-pied et toilettes adaptées</li>
+          </ul>
+          <a class="link" href="https://aubergeduchateaujoux.wixsite.com/aubergechateaujoux/la-carte-du-restaurant" target="_blank" rel="noopener"><span data-i18n="rest.menu">Voir la carte</span><span aria-hidden="true">→</span></a>
+        </div>
+        <div class="reveal" style="--d:.12s">
+          <p class="eyebrow">03</p>
+          <h3 data-i18n="ice.h">Le Glacier</h3>
+          <p data-i18n="ice.p">Glaces et sorbets artisanaux, à savourer sur la terrasse en bois, orientée plein sud.</p>
+          <ul class="ticks">
+            <li data-i18n="ice.1">Glaces et sorbets artisanaux</li>
+            <li data-i18n="ice.2">Servis en terrasse, face au château</li>
+            <li data-i18n="ice.3">La halte après la visite du Château de Joux</li>
+            <li data-i18n="ice.4">Ouvert tous les jours · 8h – 22h</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accessibilité -->
+  <section id="accessibilite">
+    <div class="wrap acc">
+      <div class="reveal">
+        <p class="eyebrow" data-i18n="acc.eyebrow">Accueil &amp; Accessibilité PMR</p>
+        <h2 class="display" data-i18n="acc.title">Chacun est attendu, chacun est accueilli.</h2>
+        <p class="lead" data-i18n="acc.lead">L’accessibilité fait partie de l’accueil de la maison : du parking à la chambre, tout est pensé pour que chaque hôte séjourne et se restaure sereinement.</p>
+        <div class="label">
+          <img loading="lazy" decoding="async" src="https://static.wixstatic.com/media/868235_ac4e53e0fd1e46989e0dbb0d38026fad~mv2.jpg/v1/fit/w_320,h_226,al_c,q_85/868235_ac4e53e0fd1e46989e0dbb0d38026fad~mv2.jpg" width="112" height="79" data-i18n-alt="alt.label" alt="Pictogrammes Tourisme &amp; Handicap : auditif, mental, moteur, visuel" onerror="this.style.display='none'">
+          <p data-i18n="acc.label">Tourisme &amp; Handicap — auditif, mental, moteur et visuel.</p>
+        </div>
+      </div>
+      <div class="acc__list">
+        <article class="feat reveal"><span class="feat__n">01</span><h3 data-i18n="a1.t">Stationnement réservé à l’entrée</h3><p data-i18n="a1.d">Un accès et un parking réservés aux personnes à mobilité réduite, juste devant l’entrée.</p></article>
+        <article class="feat reveal"><span class="feat__n">02</span><h3 data-i18n="a2.t">Restaurant de plain-pied</h3><p data-i18n="a2.d">Un accès sans marche à la salle et des toilettes adaptées.</p></article>
+        <article class="feat reveal"><span class="feat__n">03</span><h3 data-i18n="a3.t">Chambre aménagée PMR</h3><p data-i18n="a3.d">Une chambre entièrement adaptée pour accueillir les personnes à mobilité réduite.</p></article>
+        <article class="feat reveal"><span class="feat__n">04</span><h3 data-i18n="a4.t">Une équipe formée</h3><p data-i18n="a4.d">Notre personnel est formé pour accompagner les handicaps auditif, visuel, moteur et mental.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="snow">
+    <div class="wrap">
+      <div class="card reveal">
+        <div class="card__a">
+          <p class="eyebrow" data-i18n="inq.eyebrow">Réservation directe · Zéro commission</p>
+          <h2 class="display"><span data-i18n="inq.title1">Réservation en direct —</span> <em data-i18n="inq.title2">sans intermédiaire</em></h2>
+          <p class="lead" data-i18n="inq.lead">Par téléphone ou par e-mail, vous réservez auprès de l’auberge elle-même : aucune plateforme, aucune commission.</p>
+          <div class="contact">
+            <a href="tel:+33381694041"><small data-i18n="inq.phone">Téléphone</small><span>+33 3 81 69 40 41</span></a>
+            <a href="mailto:aubergeduchateaudejoux@gmail.com"><small data-i18n="inq.email">E-mail</small><span>aubergeduchateaudejoux@gmail.com</span></a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Auberge+du+Ch%C3%A2teau+de+Joux%2C+981+Route+de+Lausanne%2C+25300+La+Cluse-et-Mijoux" target="_blank" rel="noopener"><small data-i18n="inq.addr">Adresse</small><span>981 Route de Lausanne (RN 57), 25300 La Cluse-et-Mijoux, France</span></a>
+            <div><small data-i18n="inq.hours">Horaires</small><span data-i18n="inq.hours.v">Ouvert tous les jours · 08h00 – 22h00</span></div>
+          </div>
+        </div>
+        <form class="form" id="form" novalidate>
+          <div class="field field--full"><label for="type" data-i18n="form.type">Votre demande</label>
+            <select id="type" name="type">
+              <option value="stay" data-i18n="opt.stay" selected>Séjour à l’hôtel</option>
+              <option value="table" data-i18n="opt.table">Table au restaurant</option>
+              <option value="group" data-i18n="opt.group">Groupe</option>
+            </select></div>
+          <div class="field"><label for="date" data-i18n="form.date">Date</label><input type="date" id="date" name="date" required></div>
+          <div class="field"><label for="guests" data-i18n="form.guests">Personnes</label><input type="number" id="guests" name="guests" min="1" max="60" value="2" inputmode="numeric"></div>
+          <div class="field" id="nightsField"><label for="nights" data-i18n="form.nights">Nuits</label>
+            <select id="nights" name="nights"><option selected>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option></select></div>
+          <div class="field"><label for="name" data-i18n="form.name">Nom</label><input type="text" id="name" name="name" autocomplete="name" required></div>
+          <div class="field field--full"><label for="phone" data-i18n="form.phone">Téléphone</label><input type="tel" id="phone" name="phone" autocomplete="tel"></div>
+          <div class="field field--full"><label for="notes" data-i18n="form.notes">Message (facultatif)</label><textarea id="notes" name="notes" rows="1" data-i18n-ph="form.notes.ph" placeholder="Une précision à nous donner ?"></textarea></div>
+          <div class="preview" aria-live="polite"><small data-i18n="form.preview">Votre message</small><pre id="preview"></pre></div>
+          <p class="error" id="error" role="alert"></p>
+          <div class="actions">
+            <button class="btn" type="submit" id="sendMail" data-i18n="form.mail">Envoyer par e-mail</button>
+            <a class="btn btn--ghost" href="tel:+33381694041" data-i18n="form.call">Appeler l’auberge</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__in">
+    <p><img loading="lazy" src="https://static.wixstatic.com/media/868235_4d8b330abfa340f6b7730016a3a8f851~mv2.png/v1/fit/w_480,h_112,al_c,q_90/868235_4d8b330abfa340f6b7730016a3a8f851~mv2.png" width="112" height="26" alt="Auberge du Château de Joux" onerror="this.style.display='none'"><span>Auberge du Château de Joux · 981 Route de Lausanne, 25300 La Cluse-et-Mijoux</span></p>
+    <p>© 2026 Auberge du Château de Joux</p>
+    <p class="credit">Crafted by Jacob Web Design</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var doc = document, root = doc.documentElement;
+  root.classList.add('js');
+  var $ = function(s, c){ return (c || doc).querySelector(s); };
+  var $$ = function(s, c){ return Array.prototype.slice.call((c || doc).querySelectorAll(s)); };
+
+  var EMAIL = 'aubergeduchateaudejoux@gmail.com';
+
+  /* ---------- Translations ----------
+     French lives in the markup and is collected at start-up; only English is listed here. */
+  var EN = {
+    'skip':'Skip to content',
+    'nav.inn':'The Inn','nav.table':'Dining & Gelato','nav.acc':'Accessibility','nav.contact':'Contact','cta':'Reserve',
+    'hero.eyebrow':'Hotel · Restaurant · Ice Cream Parlour — La Cluse-et-Mijoux',
+    'hero.title':'At the Foot of <span class="nw">Château de Joux</span> — An Authentic Stop on the <span class="nw">Route de Lausanne.</span>',
+    'hero.sub':'Charming hotel, regional restaurant and artisanal ice cream parlour — open every day from 8:00 to 22:00.',
+    'fact.1':'Open 7 days · 8:00 – 22:00','fact.2':'Hotel · Restaurant · Gelato','fact.3':'Fully Accessible','fact.4':'Facing Château de Joux',
+    'alt.hero':'The Auberge du Château de Joux and its terrace, the castle on the ridge above',
+    'alt.room':'Guest room with double bed and botanical wallpaper','alt.facade':'Front of the Auberge du Château de Joux',
+    'alt.terrace':'The inn’s terrace, tables set in the sun','alt.castle':'Château de Joux on its rocky spur',
+    'alt.aerial':'The inn and the village seen from above, beneath Château de Joux','alt.room2':'Guest room with several beds',
+    'alt.label':'Tourisme & Handicap pictograms: hearing, cognitive, motor, visual',
+    'inn.eyebrow':'The Inn','inn.title':'Three houses in one, facing the castle.',
+    'inn.lead':'Renovated in 2016, the inn offers a warm welcome and a sweeping view of Château de Joux and the fir forests — at 860 m in the Haut-Doubs, 15 minutes from Switzerland.',
+    'p1.t':'The Hotel','p1.d':'Peaceful mountain rooms on the French-Swiss border (Pontarlier – Lausanne axis), including a dedicated ground-level accessible room.',
+    'p1.m':'15 rooms · 15 to 30 m² · 2 to 4 guests',
+    'p2.t':'The Restaurant','p2.d':'Seasonal Jura & Franche-Comté cuisine served daily from morning to evening, with step-free dining access.',
+    'p2.m':'60 seats · two dining rooms & veranda',
+    'p3.t':'The Ice Cream Parlour','p3.d':'Artisanal ice creams and sorbets served on the terrace after visiting Château de Joux.',
+    'p3.m':'Wooden terrace · south-facing',
+    'g.1':'The inn, at the foot of the castle','g.2':'Château de Joux','g.3':'Rooms for 2 to 4 guests',
+    'table.eyebrow':'Dining & Gelato','table.title':'Franche-Comté on the table, from morning to evening.',
+    'table.lead':'Traditional cooking built on regional produce — and, to finish, an artisanal ice cream on the terrace, facing the castle.',
+    'rest.h':'The Restaurant','rest.p':'Two dining rooms and a veranda, seating 60, open every day.',
+    'rest.1':'Morteau sausage, Mont d’Or, Comté','rest.2':'Specialities: “le coin des Morilles” (morels) and perch fillets meunière',
+    'rest.3':'Buffet of homemade desserts','rest.4':'Step-free access and adapted restrooms','rest.menu':'See the menu',
+    'ice.h':'The Ice Cream Parlour','ice.p':'Artisanal ice creams and sorbets, enjoyed on the south-facing wooden terrace.',
+    'ice.1':'Artisanal ice creams and sorbets','ice.2':'Served on the terrace, facing the castle','ice.3':'The stop after visiting Château de Joux','ice.4':'Open every day · 8:00 – 22:00',
+    'acc.eyebrow':'Hospitality & Accessibility','acc.title':'Everyone is expected, everyone is welcomed.',
+    'acc.lead':'Accessibility is part of how the house welcomes its guests: from the car park to the bedroom, everything is designed so that every guest can stay and dine at ease.',
+    'acc.label':'Tourisme & Handicap — hearing, cognitive, motor and visual.',
+    'a1.t':'Reserved parking at the entrance','a1.d':'Reserved access and accessible parking, right at the entrance.',
+    'a2.t':'Step-free restaurant','a2.d':'Step-free access to the dining room and adapted restrooms.',
+    'a3.t':'Adapted guest room','a3.d':'A fully adapted room for guests with reduced mobility.',
+    'a4.t':'A trained team','a4.d':'Our staff are trained to assist guests with hearing, visual, motor or cognitive disabilities.',
+    'inq.eyebrow':'Direct Booking · Zero Commission','inq.title1':'Book direct —','inq.title2':'no intermediary',
+    'inq.lead':'By phone or by email, you book with the inn itself: no platform, no commission.',
+    'inq.phone':'Phone','inq.email':'Email','inq.addr':'Address','inq.hours':'Hours','inq.hours.v':'Open every day · 08:00 – 22:00',
+    'form.type':'Your request','opt.stay':'Hotel stay','opt.table':'Restaurant table','opt.group':'Group',
+    'form.date':'Date','form.guests':'Guests','form.nights':'Nights','form.name':'Name','form.phone':'Phone',
+    'form.notes':'Message (optional)','form.notes.ph':'Anything we should know?','form.preview':'Your message',
+    'form.mail':'Send by Email','form.call':'Call the inn'
+  };
+  // Strings that only exist in script (generated message, errors, document title).
+  var MSG = {
+    fr: { title:'Auberge du Château de Joux — Hôtel, Restaurant & Glacier à La Cluse-et-Mijoux', sep:' : ',
+      hello:'Bonjour,', ask:'Je souhaite faire une demande de réservation à l’Auberge du Château de Joux.',
+      type:'Demande', date:'Date', nights:'Nuits', guests:'Personnes', name:'Nom', phone:'Téléphone', notes:'Message',
+      thanks:'Merci.', subject:'Auberge du Château de Joux — Demande',
+      'err.date':'Veuillez choisir une date.', 'err.guests':'Veuillez indiquer le nombre de personnes.', 'err.name':'Veuillez indiquer votre nom.' },
+    en: { title:'Auberge du Château de Joux — Hotel, Restaurant & Ice Cream Parlour in La Cluse-et-Mijoux', sep:': ',
+      hello:'Hello,', ask:'I would like to make a booking inquiry at the Auberge du Château de Joux.',
+      type:'Request', date:'Date', nights:'Nights', guests:'Guests', name:'Name', phone:'Phone', notes:'Message',
+      thanks:'Thank you.', subject:'Auberge du Château de Joux — Inquiry',
+      'err.date':'Please choose a date.', 'err.guests':'Please enter the number of guests.', 'err.name':'Please enter your name.' }
+  };
+  var LOCALE = { fr:'fr-FR', en:'en-GB' };
+  var FR = {}, lang = 'fr';
+  // Only the headline carries markup (no-wrap spans); it is our own static text.
+  function isHtml(el){ return el.hasAttribute('data-i18n-html'); }
+  $$('[data-i18n]').forEach(function(el){ FR[el.getAttribute('data-i18n')] = isHtml(el) ? el.innerHTML : el.textContent; });
+  $$('[data-i18n-ph]').forEach(function(el){ FR[el.getAttribute('data-i18n-ph')] = el.placeholder; });
+  $$('[data-i18n-alt]').forEach(function(el){ FR[el.getAttribute('data-i18n-alt')] = el.alt; });
+  function t(k){ return (lang === 'en' && EN[k]) || FR[k] || k; }
+  function m(k){ return MSG[lang][k]; }
+
+  function applyLang(){
+    root.lang = lang;
+    doc.title = m('title');
+    $$('[data-i18n]').forEach(function(el){
+      var v = t(el.getAttribute('data-i18n'));
+      if(isHtml(el)) el.innerHTML = v; else el.textContent = v;
+    });
+    $$('[data-i18n-ph]').forEach(function(el){ el.placeholder = t(el.getAttribute('data-i18n-ph')); });
+    $$('[data-i18n-alt]').forEach(function(el){ el.alt = t(el.getAttribute('data-i18n-alt')); });
+    $$('.lang button').forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.lang === lang)); });
+    showError(errKey);
+    render();
+  }
+  var swapTimer;
+  function setLang(next, instant){
+    if(!MSG[next] || next === lang) return;
+    lang = next;
+    try{ localStorage.setItem('auberge-joux-lang', lang); }catch(e){}
+    clearTimeout(swapTimer);
+    if(instant){ applyLang(); return; }
+    doc.body.classList.add('lang-swap');
+    swapTimer = setTimeout(function(){ applyLang(); doc.body.classList.remove('lang-swap'); }, 200);
+  }
+  $$('.lang button').forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.lang); }); });
+
+  /* ---------- Header & mobile menu ---------- */
+  var header = $('#header'), burger = $('#burger'), drawer = $('#drawer');
+  function onScroll(){ header.classList.toggle('is-scrolled', window.scrollY > 24); }
+  window.addEventListener('scroll', onScroll, { passive:true }); onScroll();
+  function setMenu(open){
+    drawer.classList.toggle('is-open', open);
+    burger.setAttribute('aria-expanded', String(open));
+  }
+  burger.addEventListener('click', function(){ setMenu(burger.getAttribute('aria-expanded') !== 'true'); });
+  drawer.addEventListener('click', function(e){ if(e.target.closest('a')) setMenu(false); });
+  doc.addEventListener('keydown', function(e){ if(e.key === 'Escape') setMenu(false); });
+
+  /* ---------- Inquiry form ---------- */
+  var fType = $('#type'), fDate = $('#date'), fGuests = $('#guests'), fNights = $('#nights'), fName = $('#name'), fPhone = $('#phone'), fNotes = $('#notes');
+  var nightsField = $('#nightsField'), nameField = fName.parentNode;
+  var preview = $('#preview'), errorEl = $('#error'), errKey = '';
+  function iso(d){ return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); }
+  function fmt(v){
+    var p = v.split('-'); if(p.length !== 3) return '—';
+    return new Intl.DateTimeFormat(LOCALE[lang], { weekday:'long', day:'numeric', month:'long', year:'numeric' }).format(new Date(+p[0], +p[1] - 1, +p[2]));
+  }
+  function isStay(){ return fType.value === 'stay'; }
+  function typeLabel(){ return t('opt.' + fType.value); }
+  function message(){
+    var c = m('sep'), lines = [m('hello'), m('ask'), '',
+      m('type') + c + typeLabel(),
+      m('date') + c + fmt(fDate.value)];
+    if(isStay()) lines.push(m('nights') + c + fNights.value);
+    lines.push(m('guests') + c + (fGuests.value || '—'));
+    [['name', fName], ['phone', fPhone], ['notes', fNotes]].forEach(function(p){
+      var v = p[1].value.trim();
+      if(v) lines.push(m(p[0]) + c + v);
+    });
+    lines.push('', m('thanks'));
+    return lines.join('\n');
+  }
+  function validate(){
+    if(!fDate.value) return 'err.date';
+    if(!(+fGuests.value >= 1)) return 'err.guests';
+    if(!fName.value.trim()) return 'err.name';
+    return '';
+  }
+  function showError(k){ errKey = k; errorEl.textContent = k ? m(k) : ''; }
+  function render(){ preview.textContent = message(); }
+  function onChange(){
+    // Nights only apply to a hotel stay; the name field takes the freed width.
+    nightsField.hidden = !isStay();
+    nameField.classList.toggle('field--full', !isStay());
+    if(errKey) showError(validate());
+    render();
+  }
+  fDate.min = iso(new Date());
+  [fType, fDate, fGuests, fNights, fName, fPhone, fNotes].forEach(function(el){
+    el.addEventListener('input', onChange);
+    el.addEventListener('change', onChange);
+  });
+  $('#form').addEventListener('submit', function(e){
+    e.preventDefault();
+    var k = validate();
+    showError(k);
+    if(k){ ({ 'err.date':fDate, 'err.guests':fGuests, 'err.name':fName })[k].focus(); return; }
+    window.location.href = 'mailto:' + EMAIL +
+      '?subject=' + encodeURIComponent(m('subject') + ' (' + typeLabel() + ')') +
+      '&body=' + encodeURIComponent(message().replace(/\n/g, '\r\n'));
+  });
+
+  /* ---------- Scroll reveal & current nav link ---------- */
+  var reveals = $$('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(!en.isIntersecting) return;
+        en.target.classList.add('is-in');
+        io.unobserve(en.target);
+      });
+    }, { rootMargin:'0px 0px -8% 0px', threshold:.08 });
+    reveals.forEach(function(el){ io.observe(el); });
+
+    var links = $$('.nav a');
+    var spy = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(!en.isIntersecting) return;
+        links.forEach(function(a){ a.classList.toggle('is-current', a.getAttribute('href') === '#' + en.target.id); });
+      });
+    }, { rootMargin:'-45% 0px -50% 0px' });
+    $$('main section[id]').forEach(function(s){ spy.observe(s); });
+  } else {
+    reveals.forEach(function(el){ el.classList.add('is-in'); });
+  }
+
+  /* ---------- Init ---------- */
+  var saved = null;
+  try{ saved = localStorage.getItem('auberge-joux-lang'); }catch(e){}
+  if(saved === 'en') setLang('en', true); else render();
+})();
+</script>
+</body>
+</html>
