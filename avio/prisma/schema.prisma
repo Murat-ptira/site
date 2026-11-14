@@ -1,0 +1,223 @@
+// Prisma schema for AVIO.
+//
+// Money-like values (credits) are stored as integers in "credit units"
+// (see src/lib/credits.ts) so that balances never suffer float drift.
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum ThemePreference {
+  DARK
+  LIGHT
+  SYSTEM
+}
+
+enum ConversationMode {
+  CHAT
+  COMPARE
+}
+
+enum MessageRole {
+  USER
+  ASSISTANT
+}
+
+enum MessageStatus {
+  PENDING
+  COMPLETE
+  ERROR
+}
+
+enum UsageStatus {
+  PENDING
+  SUCCEEDED
+  FAILED
+}
+
+enum CreditTransactionType {
+  SIGNUP_GRANT
+  USAGE
+  ADJUSTMENT
+  PURCHASE
+  REFUND
+}
+
+model User {
+  id           String          @id @default(cuid())
+  email        String          @unique
+  name         String
+  passwordHash String
+  theme        ThemePreference @default(DARK)
+
+  /// Spendable balance in credit units. Only changed inside a transaction that
+  /// also writes a CreditTransaction row.
+  creditBalance   Int @default(0)
+  /// Sum of holds placed for AI requests that are still in flight.
+  reservedCredits Int @default(0)
+
+  inviteCodeId String?
+  inviteCode   InviteCode? @relation(fields: [inviteCodeId], references: [id], onDelete: SetNull)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  sessions           Session[]
+  conversations      Conversation[]
+  messages           Message[]
+  usageRecords       UsageRecord[]
+  creditTransactions CreditTransaction[]
+}
+
+model Session {
+  id String @id @default(cuid())
+  /// SHA-256 of the session token. The raw token only ever lives in the cookie.
+  tokenHash String   @unique
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([expiresAt])
+}
+
+model InviteCode {
+  id        String    @id @default(cuid())
+  code      String    @unique
+  note      String?
+  maxUses   Int       @default(1)
+  useCount  Int       @default(0)
+  expiresAt DateTime?
+  createdAt DateTime  @default(now())
+
+  users User[]
+}
+
+/// One row per provider adapter in src/server/ai/providers. Rows are created
+/// automatically from the catalog; `isEnabled` lets an operator switch a
+/// provider off without redeploying.
+model AIProvider {
+  id        String   @id
+  name      String
+  isEnabled Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  messages     Message[]
+  usageRecords UsageRecord[]
+}
+
+model Conversation {
+  id        String           @id @default(cuid())
+  userId    String
+  user      User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title     String
+  mode      ConversationMode @default(CHAT)
+  createdAt DateTime         @default(now())
+  updatedAt DateTime         @updatedAt
+
+  messages     Message[]
+  usageRecords UsageRecord[]
+
+  @@index([userId, updatedAt(sort: Desc)])
+}
+
+model Message {
+  id             String        @id @default(cuid())
+  conversationId String
+  conversation   Conversation  @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  userId         String
+  user           User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  role           MessageRole
+  content        String
+  status         MessageStatus @default(COMPLETE)
+
+  /// Assistant replies point at the user message they answer. `lane` tells the
+  /// two sides of a comparison apart (0 for a normal chat).
+  parentId String?
+  parent   Message?  @relation("Replies", fields: [parentId], references: [id], onDelete: Cascade)
+  replies  Message[] @relation("Replies")
+  lane     Int?
+
+  providerId String?
+  provider   AIProvider? @relation(fields: [providerId], references: [id])
+  model      String?
+  errorCode  String?
+
+  /// Client-generated idempotency key of the send that created a user message.
+  requestId String?
+
+  createdAt DateTime @default(now())
+
+  usageRecord UsageRecord?
+
+  @@unique([userId, requestId])
+  @@index([conversationId, createdAt])
+}
+
+model UsageRecord {
+  id             String        @id @default(cuid())
+  userId         String
+  user           User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  conversationId String?
+  conversation   Conversation? @relation(fields: [conversationId], references: [id], onDelete: SetNull)
+  messageId      String?       @unique
+  message        Message?      @relation(fields: [messageId], references: [id], onDelete: SetNull)
+  providerId     String
+  provider       AIProvider    @relation(fields: [providerId], references: [id])
+  model          String
+  status         UsageStatus   @default(PENDING)
+
+  inputTokens  Int @default(0)
+  outputTokens Int @default(0)
+  /// Estimated provider cost in millionths of a US dollar.
+  costMicroUsd Int @default(0)
+  /// Hold placed on the balance before the request was sent, in credit units.
+  creditsReserved Int
+  /// What the user was actually charged, in credit units.
+  creditsCharged Int @default(0)
+
+  errorCode   String?
+  latencyMs   Int?
+  createdAt   DateTime  @default(now())
+  completedAt DateTime?
+
+  creditTransaction CreditTransaction?
+
+  @@index([userId, createdAt])
+  @@index([userId, status])
+}
+
+model CreditTransaction {
+  id     String                @id @default(cuid())
+  userId String
+  user   User                  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  type   CreditTransactionType
+  /// Signed amount in credit units: positive for grants, negative for usage.
+  amount       Int
+  balanceAfter Int
+  description  String?
+
+  /// A usage record can be charged at most once.
+  usageRecordId String?      @unique
+  usageRecord   UsageRecord? @relation(fields: [usageRecordId], references: [id], onDelete: SetNull)
+  /// Idempotency key for external events such as a payment provider's event id.
+  reference String? @unique
+
+  createdAt DateTime @default(now())
+
+  @@index([userId, createdAt])
+}
+
+/// Fixed-window counters backing src/server/rate-limit.ts.
+model RateLimit {
+  key         String   @id
+  windowStart DateTime
+  count       Int
+}
